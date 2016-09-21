@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import { Link } from 'react-router';
 import _ from 'lodash';
 
 class DayBox extends Component {
@@ -26,7 +27,11 @@ class DayBox extends Component {
               cellColorClass = '';
           }
           return (
-            <td className={'meal-person-cell ' + cellColorClass} key={person.id}>
+            <td
+              className={'meal-person-cell ' + cellColorClass}
+              key={person.id}
+              style={{width: this.props.width / 4}}
+            >
               {_.map(meal.dishDistribution[person.id], (servings, dishId) => 
                 <div className="meal-dish" key={dishId}>{this.props.dishes[dishId].name} ({servings})</div>)}
             </td>
@@ -40,7 +45,12 @@ class DayBox extends Component {
     return (
       <table key={day.id} className='calendar-day-box'>
         <tbody>
-          <tr className="day-title"><td>{day.date.format('ddd, MMM DD')}</td></tr>
+          <tr className="day-title"><td>
+            <span className="day-title-date">{day.date.format('ddd, MMM DD')}</span>
+            <Link to={`/day/${day.id}`}>
+              <i className="fa fa-search-plus" aria-hidden="true"></i>
+            </Link>
+          </td></tr>
           <tr className="people-row">
             {_.map(this.props.people, (person) =>
               <td key={person.id} className='person-name'>{person.name}</td>)}
@@ -58,7 +68,8 @@ DayBox.propTypes = {
   day: PropTypes.object,
   people: PropTypes.object,
   meals: PropTypes.object,
-  dishes: PropTypes.object
+  dishes: PropTypes.object,
+  width: PropTypes.number,
 };
 
 export default DayBox;

@@ -1,5 +1,14 @@
+body {
+  font-family: 'Open-Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #555;
+}
+
 .calendar-container {
   display: flex;
+  width: 85%;
+  margin: 25px auto;
+  justify-content: center;
 }
 
 .calendar-day-box {
@@ -8,7 +17,20 @@
 }
 
 .day-title {
-  font-size: 16px;
+  font-size: 18px;
+}
+
+.day-title .fa {
+  margin-left: 10px;
+  color: green;
+}
+
+.day-title > td {
+  padding: 10px 5px;
+}
+
+.day-title-date {
+  font-weight: bold;
 }
 
 .people-row {
@@ -17,6 +39,7 @@
 
 .person-name {
   flex: 1 1 75px;
+  padding: 5px;
 }
 
 .meal-row {
@@ -24,7 +47,6 @@
 }
 
 .meal-person-cell {
-  width: 100px;
   height: 50px;
   white-space: nowrap;
   margin: 2px;

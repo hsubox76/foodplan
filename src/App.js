@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import store from './store';
 import Calendar from './Calendar';
 import Dishes from './Dishes';
+import SingleDay from './SingleDay';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
-          <Route path="/" component={Calendar} />
+          <Route path="/" component={Calendar}>
+          </Route>
+          <Route path="day/:id" component={SingleDay} />
           <Route path="dishes" component={Dishes} />
         </Router>
       </Provider>

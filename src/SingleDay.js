@@ -2,31 +2,23 @@ import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import DayBox from './DayBox';
 
-class Calendar extends Component {
+class SingleDay extends Component {
   render() {
-    // probably need to limit this as number of days gets bigger
-    const dayBoxes = this.props.days.map((day) => {
-      return (
+    return (
+      <div className='calendar-container'>
         <DayBox
-          key={day.id}
-          day={day}
+          day={this.props.days[this.props.params.id]}
           people={this.props.people}
           meals={this.props.meals}
           dishes={this.props.dishes}
-          width={window.innerWidth * 0.8 / this.props.days.length}
+          width={window.innerWidth * 0.85}
         />
-      );
-    });
-    return (
-      <div className="calendar-container">
-        {dayBoxes}
       </div>
     );
   }
 }
 
-Calendar.propTypes = {
-  days: PropTypes.array,
+SingleDay.propTypes = {
   meals: PropTypes.object,
   dishes: PropTypes.object,
   people: PropTypes.object,
@@ -42,4 +34,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Calendar);
+export default connect(mapStateToProps)(SingleDay);
