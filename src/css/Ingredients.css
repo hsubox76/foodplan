@@ -1,0 +1,61 @@
+table.ingredients {
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+table.ingredients > tbody > tr > td {
+  padding: 5px;
+}
+.ingredient-name > div {
+  display: flex;
+  justify-content: space-between;
+}
+.ingredient-name {
+  border: 1px solid #ccc;
+  width: 200px;
+}
+.ingredient-unit {
+  border: 1px solid #ccc;
+  width: 90px;
+}
+.ingredient-name-text {
+  font-weight: bold;
+}
+.add-ingredient-button {
+  border: 1px solid #76c33c;;
+  color: #76c33c;;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.add-ingredient-button:hover {
+  background-color: #efe;
+}
+.ingredient-details-arrow {
+  margin-left: 5px;
+  cursor: pointer;
+}
+.details-container {
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.add-ingredient-form-container {
+  margin: 5px;
+  display: flex;
+  max-width: 80%;
+  border: 2px solid #76c33c;
+  border-radius: 4px;
+  color: #76c33c;
+}
+.form-field {
+  height: 24px;
+  font-size: 16px;
+  margin: 10px;
+}
+input {
+  width: 300px;
+}
+.button {
+  cursor: pointer;
+}

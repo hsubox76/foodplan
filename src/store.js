@@ -5,10 +5,10 @@ import moment from 'moment';
 const initialState = {
   lastId: {
     days: 1,
-    dishes: 1,
-    meals: 0,
+    meals: 2,
     people: 3,
-    ingredients: 2
+    dishes: 3,
+    ingredients: 4
   },
   days: [
     {

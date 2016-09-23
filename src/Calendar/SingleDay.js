@@ -7,6 +7,7 @@ class SingleDay extends Component {
     return (
       <div className='calendar-container'>
         <DayBox
+          type="single"
           day={this.props.days[this.props.params.id]}
           people={this.props.people}
           meals={this.props.meals}

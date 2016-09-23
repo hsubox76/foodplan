@@ -1,0 +1,212 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-family: 'Open-Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #555;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: #555;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.menu-bar {
+  display: flex;
+  background-color: #777;
+}
+
+.menu-bar > div {
+  flex: 0 0 100px;
+  display: block;
+  padding: 5px;
+  margin: 5px;
+  background-color: #555;
+}
+
+.menu-bar > div:hover {
+  background-color: #333;
+}
+
+.menu-bar a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.menu-bar a:link,
+.menu-bar a:visited,
+.menu-bar a:active {
+  color: #fff;
+}
+
+.calendar-container {
+  display: flex;
+  margin: 25px auto;
+  justify-content: center;
+}
+
+.day-box {
+  flex: 0 1 300px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 5px;
+}
+
+.day-title {
+  font-size: 18px;
+  display: flex;
+}
+
+.day-title .zoom-icon {
+  margin-left: 10px;
+  color: green;
+}
+
+.day-title .back-icon {
+  margin-right: 10px;
+  color: #2a93a0;
+}
+
+.day-title > td {
+  flex: 1 1 100%;
+  padding: 10px 5px;
+  border: 1px solid #ccc;
+  margin: 2px;
+}
+
+.day-title-date {
+  font-weight: bold;
+}
+
+.people-row {
+  display: flex;
+}
+
+.person-name {
+  flex: 1 1 75px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 2px;
+}
+
+.meal-row {
+  display: flex;
+}
+
+.meal-row-hover {
+  background-color: #eee;
+}
+
+.meal-name {
+  margin: 2px;
+  width: 20px;
+  font-weight: bold;
+  color: #777;
+  border: 1px solid #ccc;
+}
+
+.person-row-spacer {
+  width: 20px;
+  margin: 2px;
+}
+
+.meal-name > a,
+.meal-name > a:visited,
+.meal-name > a:active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #777;
+  text-decoration: none;
+}
+
+.meal-name > a:hover {
+  color: #fff;
+  background-color: #999;
+}
+.meal-person-cell {
+  height: 50px;
+  white-space: nowrap;
+  margin: 2px;
+  padding: 5px;
+}
+
+.cell-packed-meal {
+  background-color: #8fd083;
+}
+
+.cell-outside-meal {
+  background-color: #4c819a;
+}
+
+.meal-dish {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

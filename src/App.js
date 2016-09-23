@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, IndexRoute, Route, browserHistory } from 'react-router'
 import store from './store';
-import Calendar from './Calendar';
-import Dishes from './Dishes';
-import SingleDay from './SingleDay';
-import './App.css';
+import Main from './Main';
+import Calendar from './Calendar/Calendar';
+import Meal from './Calendar/Meal';
+import SingleDay from './Calendar/SingleDay';
+import Dishes from './Dishes/Dishes';
+import Ingredients from './Ingredients/Ingredients';
+import './css/App.css';
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
-          <Route path="/" component={Calendar}>
+          <Route path="/" component={Main}>
+            <IndexRoute component={Calendar} />
+            <Route path="calendar" component={Calendar} />
+            <Route path="day/:id" component={SingleDay} />
+            <Route path="meal/:id" component={Meal} />
+            <Route path="dishes" component={Dishes} />
+            <Route path="ingredients" component={Ingredients} />
           </Route>
-          <Route path="day/:id" component={SingleDay} />
-          <Route path="dishes" component={Dishes} />
         </Router>
       </Provider>
     );

@@ -9,6 +9,7 @@ class Calendar extends Component {
       return (
         <DayBox
           key={day.id}
+          type="calendar"
           day={day}
           people={this.props.people}
           meals={this.props.meals}
