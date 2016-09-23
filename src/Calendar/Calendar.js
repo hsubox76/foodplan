@@ -14,7 +14,7 @@ class Calendar extends Component {
           people={this.props.people}
           meals={this.props.meals}
           dishes={this.props.dishes}
-          width={window.innerWidth * 0.8 / this.props.days.length}
+          width={400}
         />
       );
     });

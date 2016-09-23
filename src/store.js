@@ -1,8 +1,10 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import reducer from './reducer';
 import moment from 'moment';
 
 const initialState = {
+  user: {},
   lastId: {
     days: 1,
     meals: 2,
@@ -153,6 +155,6 @@ const initialState = {
   }
 };
 
-const store = createStore(reducer, initialState);
+const store = createStore(reducer, initialState, applyMiddleware(thunk));
 
 export default store;

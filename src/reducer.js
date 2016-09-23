@@ -1,6 +1,15 @@
 import _ from 'lodash';
 import { ACTIONS } from './Actions';
 
+function user(state = {}, action) {
+  const payload = action.payload;
+  switch(action.type) {
+    case ACTIONS.SET_USER:
+      return payload.user;
+    default:
+      return state;
+  }
+}
 function days(state = [], action) {
   return state;
 };
@@ -41,6 +50,7 @@ function people(state = [], action) {
 };
 function reducer (state = {}, action) {
   return {
+    user: user(state.user, action),
     days: days(state.days, action),
     lastId: lastId(state.lastId, action),
     ingredients: ingredients(state.ingredients, action),

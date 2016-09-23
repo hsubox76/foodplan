@@ -6,6 +6,8 @@ import IngredientRow from './IngredientRow';
 import AddIngredientForm from './AddIngredientForm';
 import { addIngredient, editIngredient, deleteIngredient } from '../Actions';
 
+import firebase from 'firebase';
+
 class Ingredients extends Component {
   constructor() {
     super();
@@ -20,6 +22,10 @@ class Ingredients extends Component {
   }
   onSubmitNewIngredient() {
     this.setState({addFormVisible: false});
+  }
+  populateFirebaseWithCurrentIngredients() {
+    firebase.database().ref('users/testuserid/ingredients').set(
+      this.props.ingredients);
   }
   render() {
     const ingredientRows = _.map(this.props.ingredients, ingredient => {
@@ -43,6 +49,7 @@ class Ingredients extends Component {
     return (
       <div>
         <h1>Ingredients</h1>
+        <div onClick={() => this.populateFirebaseWithCurrentIngredients()}>populate</div>
         {this.state.addFormVisible
           ? <AddIngredientForm
               addIngredient={this.props.addIngredient}

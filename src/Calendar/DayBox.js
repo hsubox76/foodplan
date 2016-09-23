@@ -49,14 +49,15 @@ class DayBox extends Component {
             default:
               cellColorClass = '';
           }
+          const meals = _.map(meal.dishDistribution[person.id], (servings, dishId) => 
+                <div className="meal-dish" key={dishId}>{this.props.dishes[dishId].name} ({servings})</div>);
           return (
             <td
               className={'meal-person-cell ' + cellColorClass}
               key={person.id}
-              style={{width: this.props.width / 4}}
+              style={{width: this.props.width / 4 * 0.8}}
             >
-              {_.map(meal.dishDistribution[person.id], (servings, dishId) => 
-                <div className="meal-dish" key={dishId}>{this.props.dishes[dishId].name} ({servings})</div>)}
+              {meals}
             </td>
           );
         })}
@@ -80,7 +81,7 @@ class DayBox extends Component {
         <table key={day.id} className='day-box-table'>
           <tbody>
             <tr className="day-title">
-              <td>
+              <td colSpan="5">
                 { this.props.type === 'single' && backLink}
                 <span className="day-title-date">{day.date.format('ddd, MMM DD')}</span>
                 { this.props.type === 'calendar' && zoomLink}
