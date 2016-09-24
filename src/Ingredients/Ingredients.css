@@ -20,16 +20,21 @@ table.ingredients > tbody > tr > td {
 .ingredient-name-text {
   font-weight: bold;
 }
-.add-ingredient-button {
-  border: 1px solid #76c33c;;
+.button {
+  border: 1px solid #76c33c;
   color: #76c33c;;
   padding: 5px;
-  margin: 5px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
-.add-ingredient-button:hover {
+.button:hover {
   background-color: #efe;
+}
+.toggle-form-button {
+  margin: 5px;
+  width: 150px;
 }
 .ingredient-details-arrow {
   margin-left: 5px;
@@ -48,6 +53,9 @@ table.ingredients > tbody > tr > td {
   border-radius: 4px;
   color: #76c33c;
 }
+form {
+  display: flex;
+}
 .form-field {
   height: 24px;
   font-size: 16px;
@@ -55,7 +63,4 @@ table.ingredients > tbody > tr > td {
 }
 input {
   width: 300px;
-}
-.button {
-  cursor: pointer;
 }

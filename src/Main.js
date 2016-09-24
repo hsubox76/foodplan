@@ -2,21 +2,17 @@ import React, {Component, PropTypes} from 'react';
 import firebase from 'firebase';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { setUser } from './Actions';
-
-const provider = new firebase.auth.GoogleAuthProvider();
+import PlanPicker from './PlanPicker/PlanPicker';
+import { checkAuth, getPlanDataFromFirebase } from './Actions/actions';
 
 class Main extends Component {
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // User is signed in.
-        this.props.setUser(user);
-      } else {
-        // No user is signed in.
-        firebase.auth().signInWithRedirect(provider);
-      }
-    });
+    this.props.checkAuth();
+  }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.userData.selectedPlanId && !this.props.userData.selectedPlanId) {
+      this.props.getPlanDataFromFirebase();
+    }
   }
   signOut(e) {
     e.preventDefault();
@@ -24,7 +20,7 @@ class Main extends Component {
     // need to add error handling
   }
   render() {
-    if (this.props.user && this.props.user.email) {
+    if (this.props.userData.selectedPlanId) {
       return (
         <div className="main-container">
           <div className="menu-bar">
@@ -39,25 +35,26 @@ class Main extends Component {
         </div>
       );
     } else {
-      return <div>not logged in</div>;
+      return <div className="main-container"><PlanPicker /></div>;
     }
   }
 }
 
 Main.propTypes = {
-  user: PropTypes.object.isRequired,
-  setUser: PropTypes.func.isRequired,
+  userData: PropTypes.object.isRequired,
+  checkAuth: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    userData: state.userData
   };
 }
 
 function mapDispatchToActions(dispatch) {
   return {
-    setUser: (user) => dispatch(setUser(user))
+    checkAuth: () => dispatch(checkAuth()),
+    getPlanDataFromFirebase: () => dispatch(getPlanDataFromFirebase())
   };
 }
 

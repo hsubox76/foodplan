@@ -1,12 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import '../css/Ingredients.css';
+import './Ingredients.css';
 import IngredientRow from './IngredientRow';
 import AddIngredientForm from './AddIngredientForm';
-import { addIngredient, editIngredient, deleteIngredient } from '../Actions';
-
-import firebase from 'firebase';
+import {
+  addIngredient,
+  editIngredient,
+  deleteIngredient,
+  writeToFirebasePlanWith
+} from '../Actions/actions';
 
 class Ingredients extends Component {
   constructor() {
@@ -14,18 +17,14 @@ class Ingredients extends Component {
     this.state = {
       addFormVisible: false
     }
-    this.onAddIngredientButtonClick = this.onAddIngredientButtonClick.bind(this);
-    this.onSubmitNewIngredient = this.onSubmitNewIngredient.bind(this);
+    this.openIngredientForm = this.openIngredientForm.bind(this);
+    this.closeIngredientForm = this.closeIngredientForm.bind(this);
   }
-  onAddIngredientButtonClick() {
+  openIngredientForm() {
     this.setState({addFormVisible: true});
   }
-  onSubmitNewIngredient() {
+  closeIngredientForm() {
     this.setState({addFormVisible: false});
-  }
-  populateFirebaseWithCurrentIngredients() {
-    firebase.database().ref('users/testuserid/ingredients').set(
-      this.props.ingredients);
   }
   render() {
     const ingredientRows = _.map(this.props.ingredients, ingredient => {
@@ -40,8 +39,8 @@ class Ingredients extends Component {
     });
     const addIngredientButton = (
       <div
-        className="add-ingredient-button"
-        onClick={this.onAddIngredientButtonClick}
+        className="button toggle-form-button"
+        onClick={this.openIngredientForm}
       >
         add an ingredient
       </div>
@@ -49,12 +48,16 @@ class Ingredients extends Component {
     return (
       <div>
         <h1>Ingredients</h1>
-        <div onClick={() => this.populateFirebaseWithCurrentIngredients()}>populate</div>
+        <div onClick={() =>
+          this.props.writeIngredientsToFirebase(this.props.ingredients)}
+        >
+          write ingredients to firebase
+        </div>
         {this.state.addFormVisible
           ? <AddIngredientForm
               addIngredient={this.props.addIngredient}
               lastIngredientId={this.props.lastIngredientId}
-              hideForm={this.onSubmitNewIngredient}
+              hideForm={this.closeIngredientForm}
             />
           : addIngredientButton}
         <table className="ingredients">
@@ -82,7 +85,9 @@ function mapDispatchToActions(dispatch) {
   return {
     addIngredient: (name, unit, id) => dispatch(addIngredient(name, unit, id)),
     editIngredient: (name, unit, id) => dispatch(editIngredient(name, unit, id)),
-    deleteIngredient: (id) => dispatch(deleteIngredient(id))
+    deleteIngredient: (id) => dispatch(deleteIngredient(id)),
+    writeIngredientsToFirebase: (ingredients) =>
+      dispatch(writeToFirebasePlanWith('ingredients', ingredients))
   }
 }
 

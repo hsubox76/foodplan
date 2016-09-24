@@ -1,0 +1,45 @@
+.plan-picker-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+}
+
+.plan-button {
+  border: 1px solid #6089b1;
+  color: #6089b1;
+  padding: 8px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.plan-button:hover {
+  background-color: #abcdef;
+}
+
+input[type=text] {
+  height: 20px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.use-code-button {
+  width: 100px;
+  border: 1px solid #76c33c;
+  background-color: #fff;
+  padding: 4px;
+  color: #76c33c;
+  cursor: pointer;
+  margin: auto;
+}
+
+.use-code-button:hover {
+  background-color: #dfe;
+}

@@ -41,7 +41,16 @@ class AddIngredientForm extends Component {
             value={this.state.unit}
             onChange={this.onUnitChange}
           />
-          <button onClick={this.onAddClick} className="form-field new-ingredient-submit">Add</button>
+          <div
+            onClick={this.onAddClick}
+            className="form-field button new-ingredient-submit">
+              Add
+          </div>
+          <div
+            onClick={this.props.hideForm}
+            className="form-field button new-ingredient-submit">
+              Cancel
+          </div>
         </form>
       </div>
     );

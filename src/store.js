@@ -4,7 +4,7 @@ import reducer from './reducer';
 import moment from 'moment';
 
 const initialState = {
-  user: {},
+  userData: {},
   lastId: {
     days: 1,
     meals: 2,
