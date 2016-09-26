@@ -85,9 +85,11 @@ td.dish-name {
 
 .selected-item {
   position: relative;
-  margin-left: 5px;
+  margin: 0 5px;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
 
 .option-box {

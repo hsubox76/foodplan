@@ -9,7 +9,8 @@ class AddDishForm extends Component {
     this.onIngredientNameSelect = this.onIngredientNameSelect.bind(this);
     this.state = {
       name: '',
-      ingredients: [{}]
+      ingredients: [{}],
+      error: null
     }
   }
   onNameChange(e) {
@@ -19,6 +20,21 @@ class AddDishForm extends Component {
     this.setState({
       ingredients: this.state.ingredients.concat({})
     });
+  }
+  formatAndAddDish() {
+    // more specific and better error checking
+    // (also make sure quantities not 0)
+    if (this.state.name !== ''
+      && this.state.ingredients.length > 0
+      && !_.isEmpty(this.state.ingredients[0])) {
+      this.props.addDish({
+        name: this.state.name,
+        ingredientIds: _.map(this.state.ingredients, ingredient => ingredient.id)
+      });
+      this.props.hideForm();
+    } else {
+      this.setState({ error: 'error: something missing'});
+    }
   }
   onIngredientNameSelect(ingredient, index) {
     const ingredients = this.state.ingredients;
@@ -45,7 +61,7 @@ class AddDishForm extends Component {
           />
         </div>
         <div className="row-text">
-          <input className="ingredient-quantity" type="number" />
+          <input className="ingredient-quantity" placeholder="qty" type="number" />
         </div>
         <div className="row-text">{ingredient.unit}</div>
       </div>
@@ -70,10 +86,19 @@ class AddDishForm extends Component {
             add another ingredient
           </div>
         </div>
-        <div
-          onClick={this.props.hideForm}
-          className="form-field button new-ingredient-submit">
-            Cancel
+        {this.state.error
+          && <div className="add-dish-form-row">{this.state.error}</div>}
+        <div className="add-dish-form-row">
+          <div
+            onClick={() => this.formatAndAddDish()}
+            className="form-field button new-dish-submit">
+              Add It
+          </div>
+          <div
+            onClick={this.props.hideForm}
+            className="form-field button new-dish-cancel">
+              Cancel
+          </div>
         </div>
       </div>
     );
@@ -81,6 +106,7 @@ class AddDishForm extends Component {
 }
 
 AddDishForm.propTypes = {
+  addDish: PropTypes.func.isRequired,
   hideForm: PropTypes.func.isRequired,
   ingredients: PropTypes.object,
 };

@@ -4,6 +4,7 @@ import _ from 'lodash';
 import '../css/Dishes.css';
 import DishRow from './DishRow';
 import AddDishForm from './AddDishForm';
+import { addDish } from '../Actions/actions';
 
 class Dishes extends Component {
   constructor() {
@@ -40,6 +41,7 @@ class Dishes extends Component {
         {this.state.addFormVisible
           ? <AddDishForm
               hideForm={this.closeDishForm}
+              addDish={this.props.addDish}
               ingredients={this.props.ingredients}
             />
           : addDishButton}
@@ -64,4 +66,10 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Dishes);
+function mapDispatchToProps(dispatch) {
+  return {
+    addDish: (dish) => dispatch(addDish(dish))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dishes);

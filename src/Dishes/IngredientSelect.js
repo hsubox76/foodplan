@@ -38,10 +38,11 @@ class IngredientSelect extends Component {
               {id: this.state.selectedId});
     const selectedItem = (
       <div className="selected-item" onClick={() => this.showOptions()}>
-        {!_.isNil(this.state.selectedId)
+        <span>{!_.isNil(this.state.selectedId)
           ? selectedIngredient.name
           : 'pick an ingredient'
-        }
+        }</span>
+        <span className="fa fa-caret-down" />
       </div>
     );
     return (
@@ -53,7 +54,7 @@ class IngredientSelect extends Component {
 }
 
 IngredientSelect.propTypes = {
-  selectedIngredientId: PropTypes.number,
+  selectedIngredientId: PropTypes.string,
   sortedIngredients: PropTypes.array,
   onIngredientNameSelect: PropTypes.func.isRequired,
 };

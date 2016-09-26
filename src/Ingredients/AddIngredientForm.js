@@ -14,7 +14,7 @@ class AddIngredientForm extends Component {
   onAddClick(e) {
     e.preventDefault();
     // need to do some validation or whatever
-    this.props.addIngredient(this.state.name, this.state.unit, this.props.lastIngredientId + 1);
+    this.props.addIngredient(this.state.name, this.state.unit);
     this.props.hideForm();
   }
   onNameChange(e) {
@@ -59,7 +59,6 @@ class AddIngredientForm extends Component {
 
 AddIngredientForm.propTypes = {
   addIngredient: PropTypes.func.isRequired,
-  lastIngredientId: PropTypes.number.isRequired,
   hideForm: PropTypes.func.isRequired,
 };
 

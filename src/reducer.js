@@ -54,7 +54,7 @@ function ingredients(state = {}, action) {
       return state;
   }
 };
-function dishes(state = [], action) {
+function dishes(state = {}, action) {
   const payload = action.payload;
   switch(action.type) {
     case ACTIONS.SET_PLAN_DATA:
@@ -66,10 +66,10 @@ function dishes(state = [], action) {
       return state;
   }
 };
-function meals(state = [], action) {
+function meals(state = {}, action) {
   return state;
 };
-function people(state = [], action) {
+function people(state = {}, action) {
   return state;
 };
 function reducer (state = {}, action) {

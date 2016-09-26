@@ -81,18 +81,22 @@ export function setSelectedPlanId(planId) {
   }
 }
 
-export function addIngredient(name, unit, id) {
+// change signature to take ingredient object as arg
+export function addIngredient(name, unit) {
   return (dispatch, getStore) => {
     const { userData } = getStore();
-    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients/' + id).set({
+    const newIngredientRef =
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients').push();
+    newIngredientRef.set({
       name: name,
       unit: unit,
-      id: id
+      id: newIngredientRef.key
     });
-    dispatch({ type: ACTIONS.ADD_INGREDIENT, payload: { name, unit, id } });
+    dispatch({ type: ACTIONS.ADD_INGREDIENT, payload: { name, unit, id: newIngredientRef.key } });
   }
 }
 
+// change signature to take ingredient object as arg
 export function editIngredient(name, unit, id) {
   return (dispatch, getStore) => {
     const { userData } = getStore();
@@ -106,5 +110,22 @@ export function editIngredient(name, unit, id) {
 }
 
 export function deleteIngredient(id) {
-  return { type: ACTIONS.DELETE_INGREDIENT, payload: { id } };
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients/' + id).remove();
+    dispatch({ type: ACTIONS.DELETE_INGREDIENT, payload: { id } });
+  }
+}
+
+export function addDish(dish) {
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    const newDishRef =
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/dishes').push();
+    newDishRef.set({
+      id: newDishRef.key,
+      name: dish.name,
+      ingredientIds: dish.ingredientIds
+    });
+  }
 }
