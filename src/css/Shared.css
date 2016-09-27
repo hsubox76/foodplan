@@ -1,6 +1,4 @@
 .item-select {
-  width: 200px;
-  height: 25px;
   border: 1px solid #ccc;
   cursor: pointer;
 }
@@ -30,6 +28,12 @@
   border: 1px solid #efe;
 }
 
+.option-item-selected {
+  background-color: #576;
+  color: #fff;
+}
+
 .option-item:hover {
+  color: #222;
   background-color: #cdc;
 }

@@ -9,7 +9,7 @@ import {
   editIngredient,
   deleteIngredient,
   writeToFirebasePlanWith
-} from '../Actions/actions';
+} from '../../Actions/actions';
 
 class Ingredients extends Component {
   constructor() {

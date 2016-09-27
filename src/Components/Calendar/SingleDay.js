@@ -1,14 +1,19 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
-import DayBox from './DayBox';
+import DayBox from '../DayBox/DayBox';
 
 class SingleDay extends Component {
   render() {
+    const day = this.props.days[this.props.params.id]
+      || {
+        date: this.props.params.id,
+        mealIds: {}
+      }
     return (
       <div className='calendar-container'>
         <DayBox
           type="single"
-          day={this.props.days[this.props.params.id]}
+          day={day}
           people={this.props.people}
           meals={this.props.meals}
           dishes={this.props.dishes}

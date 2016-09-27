@@ -1,0 +1,41 @@
+.date-form {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 450px;
+  justify-content: flex-start;
+}
+
+.date-form .day-input,
+.date-form .num-days-input {
+  height: 25px;
+  font-size: 16px;
+}
+
+.date-form .day-input {
+  width: 50px;
+  margin: 5px;
+}
+
+.date-form .num-days-input {
+  width: 40px;
+}
+
+.date-form > div {
+  margin: 5px;
+}
+
+.date-form .form-text {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.date-form .form-block {
+  display: flex;
+  margin: 5px 10px;
+}
+
+.date-form .form-block > div {
+  margin: 0 5px;
+}

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import moment from 'moment';
 import ItemSelect from '../Shared/ItemSelect';
-import { addMeal, editMeal } from '../Actions/actions';
+import { addMeal, editMeal } from '../../Actions/actions';
 import './Meal.css';
-import '../css/Shared.css';
+import { MEAL_TYPES } from '../../constants/constants';
 
 class Meal extends Component {
   constructor(props) {
@@ -29,6 +29,13 @@ class Meal extends Component {
         }, {})
       }
     }
+  }
+  onChangeMealType(value, personId) {
+    this.setState({
+      peopleDistribution: _.extend({}, this.state.peopleDistribution, {
+        [personId]: value
+      })
+    });
   }
   onChangeQuantity(index, personId, quantity) {
     this.setState({
@@ -82,6 +89,11 @@ class Meal extends Component {
   }
   render() {
     const sortedDishes = _.sortBy(this.props.dishes, 'name');
+    const mealTypeOptions = _.map(MEAL_TYPES, (mealType) => ({
+      id: mealType.name,
+      name: mealType.name,
+      color: mealType.color
+    }));
     return (
       <div className="meal-view">
         <h1>Meal View</h1>
@@ -95,7 +107,12 @@ class Meal extends Component {
           <div className="dish-header-spacer" />
           {_.map(this.props.people, (person) =>
             <div key={person.id} className="dish-header-name">
-              {this.state.peopleDistribution[person.id]}
+              <ItemSelect
+                selectedItemId={this.state.peopleDistribution[person.id]}
+                sortedItems={mealTypeOptions}
+                width={65}
+                onItemNameSelect={(item) => this.onChangeMealType(item.id, person.id)}
+              />
             </div>)}
         </div>
         {_.map(this.state.dishes, (dish, dishIndex) => 

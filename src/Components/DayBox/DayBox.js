@@ -2,6 +2,10 @@ import React, {Component, PropTypes} from 'react';
 import { Link } from 'react-router';
 import _ from 'lodash';
 import moment from 'moment';
+import { MEAL_TYPES } from '../../constants/constants';
+import './DayBox.css';
+
+const MEAL_NAME_WIDTH = 30;
 
 class DayBox extends Component {
   constructor() {
@@ -39,7 +43,11 @@ class DayBox extends Component {
               {mealName[0].toUpperCase()}
             </Link>
           </td>
-          <td className="create-new-meal-cell" colSpan={_.size(this.props.people)}>
+          <td
+            className="create-new-meal-cell"
+            colSpan={_.size(this.props.people)}
+            style={{width: this.props.width - MEAL_NAME_WIDTH}}
+          >
             <Link
               to={`/meal/new/${dayString}/${mealName}`}
             >
@@ -63,37 +71,38 @@ class DayBox extends Component {
         </td>
         {_.map(this.props.people, (person) => {
           const meal = this.props.meals[mealId];
-          let cellColorClass = '';
-          switch(meal.peopleDistribution[person.id]) {
-            case 'home':
-              cellColorClass = '';
-              break;
-            case 'packed food':
-              cellColorClass = 'cell-packed-meal';
-              break;
-            case 'outside food':
-              cellColorClass = 'cell-outside-meal';
-              break;
-            default:
-              cellColorClass = '';
-          }
+          const mealType = _.find(MEAL_TYPES, {name: meal.peopleDistribution[person.id]});
+          const cellColorStyle = {
+            backgroundColor: mealType ? mealType.color : 'transparent',
+            opacity: this.state.hoveredMealName === mealName ? 0.75 : 1
+          };
           const meals = _(meal.dishDistribution)
             .map((distTable, dishId) => ({ id: dishId, distTable }))
             .filter(dish => _.has(dish.distTable, person.id))
-            .map((dish) => (
-                <div className="meal-dish" key={dish.id}>
-                  {this.props.dishes[dish.id].name} ({dish.distTable[person.id]})
-                </div>
-              )
+            .map((dish) => {return dish.distTable[person.id]
+              ? (
+                  <div className="meal-dish" key={dish.id}>
+                    {this.props.dishes[dish.id].name} ({dish.distTable[person.id]})
+                  </div>
+                )
+              : (
+                  <div className="meal-dish" key={dish.id} />
+                )
+              }
             )
             .value();
           return (
             <td
-              className={'meal-person-cell ' + cellColorClass}
-              key={person.id}
+              className={'meal-person-cell'}
               style={{width: this.props.width / 4 * 0.8}}
+              key={person.id}
             >
-              <Link to={`/meal/${mealId}/${dayString}/${mealName}`}>{meals}</Link>
+              <Link
+                to={`/meal/${mealId}/${dayString}/${mealName}`}
+                style={cellColorStyle}
+              >
+                {meals}
+              </Link>
             </td>
           );
         })}
@@ -118,15 +127,22 @@ class DayBox extends Component {
           <tbody>
             <tr className="day-title">
               <td colSpan="5">
-                { this.props.type === 'single' && backLink}
-                <span className="day-title-date">{moment(day.date, 'YYYY-MM-DD').format('ddd, MMM DD')}</span>
-                { this.props.type === 'calendar' && zoomLink}
+                <div>
+                  { this.props.type === 'single' && backLink}
+                  <span className="day-title-date">
+                    {moment(day.date, 'YYYY-MM-DD').format('ddd, MMM DD')}
+                  </span>
+                  { this.props.type === 'calendar' && zoomLink}
+                </div>
               </td>
             </tr>
             <tr className="people-row">
               <td className="person-row-spacer"></td>
               {_.map(this.props.people, (person) =>
-                <td key={person.id} className='person-name'>{person.name}</td>)}
+                <td key={person.id} className='person-name'>
+                  <div>{person.name}</div>
+                </td>
+              )}
             </tr>
             {this.renderMealRow('breakfast', day)}
             {this.renderMealRow('lunch', day)}

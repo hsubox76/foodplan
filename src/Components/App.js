@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { Router, IndexRoute, Route, browserHistory } from 'react-router'
-import store from './store';
+import store from '../store';
 import Main from './Main';
 import Calendar from './Calendar/Calendar';
-import Meal from './Calendar/Meal';
+import Meal from './Meal/Meal';
 import SingleDay from './Calendar/SingleDay';
 import Dishes from './Dishes/Dishes';
 import Ingredients from './Ingredients/Ingredients';
-import './css/App.css';
+import '../css/App.css';
 
 class App extends Component {
   render() {

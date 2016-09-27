@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
+import '../../css/Shared.css';
 
 class ItemSelect extends Component {
   constructor(props) {
@@ -23,7 +24,8 @@ class ItemSelect extends Component {
     const options = _.map(this.props.sortedItems, (item, index) =>
       <div
         key={item.id}
-        className="option-item"
+        className={"option-item " + (this.state.selectedId === item.id && 'option-item-selected')}
+        style={ item.color ? { color: item.color } : {}}
         onClick={() => this.onSelect(item, index)}
       >
         {item.name}
@@ -38,7 +40,9 @@ class ItemSelect extends Component {
               {id: this.state.selectedId});
     const selectedItemElement = (
       <div className="selected-item" onClick={() => this.showOptions()}>
-        <span>{!_.isNil(this.state.selectedId)
+        <span
+          style={ _.has(selectedItem, 'color') ? { color: selectedItem.color } : {}}
+        >{!_.isNil(this.state.selectedId)
           ? selectedItem.name
           : 'pick an item'
         }</span>
@@ -46,7 +50,7 @@ class ItemSelect extends Component {
       </div>
     );
     return (
-      <div className="item-select">
+      <div className="item-select" style={{ width: this.props.width, height: this.props.height }}>
         {this.state.isOpen ? optionBox : selectedItemElement}
       </div>
     );
@@ -57,6 +61,13 @@ ItemSelect.propTypes = {
   selectedItemId: PropTypes.string,
   sortedItems: PropTypes.array,
   onItemNameSelect: PropTypes.func.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number
 };
+
+ItemSelect.defaultProps = {
+  width: 200,
+  height: 25
+}
 
 export default ItemSelect;

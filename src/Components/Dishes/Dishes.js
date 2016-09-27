@@ -1,10 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import '../css/Dishes.css';
+import '../../css/Dishes.css';
 import DishRow from './DishRow';
 import AddDishForm from './AddDishForm';
-import { addDish } from '../Actions/actions';
+import { addDish } from '../../Actions/actions';
 
 class Dishes extends Component {
   constructor() {

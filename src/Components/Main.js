@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import PlanPicker from './PlanPicker/PlanPicker';
-import { checkAuth, getPlanDataFromFirebase } from './Actions/actions';
+import { checkAuth, getPlanDataFromFirebase } from '../Actions/actions';
 
 class Main extends Component {
   componentDidMount() {

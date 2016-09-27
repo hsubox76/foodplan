@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import './PlanPicker.css';
-import { setSelectedPlanId } from '../Actions/actions';
+import { setSelectedPlanId } from '../../Actions/actions';
 
 class PlanPicker extends Component {
   constructor() {

@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
 import ItemSelect from '../Shared/ItemSelect';
-import '../css/Shared.css';
 
 class AddDishForm extends Component {
   constructor() {

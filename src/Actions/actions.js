@@ -142,10 +142,10 @@ export function addMeal(meal) {
       dishDistribution: meal.dishDistribution
     });
     firebase.database().ref(DB_PATH + userData.selectedPlanId + '/days/' + meal.date).update({
-      date: meal.date,
-      mealIds: {
-        [meal.type]: newMealRef.key
-      }
+      date: meal.date
+    });
+    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/days/' + meal.date + '/mealIds').update({
+      [meal.type]: newMealRef.key
     });
   }
 }
