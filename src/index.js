@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import firebase from 'firebase';
 import { config } from './private/firebase-config';
 import App from './App';
+import 'font-awesome/css/font-awesome.css';
 import './index.css';
 
 firebase.initializeApp(config);

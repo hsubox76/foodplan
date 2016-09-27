@@ -9,7 +9,7 @@ td.dish-name {
   margin: 10px;
   border: 1px solid #ccc;
 }
-.dish-name > div {
+td.dish-name > div {
   display: flex;
   justify-content: space-between;
 }
@@ -74,45 +74,4 @@ td.dish-name {
 
 .new-ingredient-submit {
   width: 100px;
-}
-
-.ingredient-select {
-  width: 200px;
-  height: 25px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.selected-item {
-  position: relative;
-  margin: 0 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-}
-
-.option-box {
-  position: relative;
-  width: calc(100% + 8px);
-  top: -3px;
-  left: -3px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  z-index: 100;
-}
-
-.option-item {
-  margin: 2px;
-  padding: 3px;
-  border: 1px solid #efe;
-}
-
-.option-item:hover {
-  background-color: #cdc;
-}
-
-.button {
-  border: 1px solid #cdc;
-  padding: 5px;
 }

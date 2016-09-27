@@ -129,3 +129,35 @@ export function addDish(dish) {
     });
   }
 }
+
+export function addMeal(meal) {
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    const newMealRef =
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/meals').push();
+    newMealRef.set({
+      id: newMealRef.key,
+      type: meal.type,
+      peopleDistribution: meal.peopleDistribution,
+      dishDistribution: meal.dishDistribution
+    });
+    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/days/' + meal.date).update({
+      date: meal.date,
+      mealIds: {
+        [meal.type]: newMealRef.key
+      }
+    });
+  }
+}
+
+export function editMeal(meal) {
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/meals/' + meal.id).set({
+      id: meal.id,
+      type: meal.type,
+      peopleDistribution: meal.peopleDistribution,
+      dishDistribution: meal.dishDistribution
+    });
+  }
+}

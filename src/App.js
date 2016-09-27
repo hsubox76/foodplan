@@ -19,7 +19,7 @@ class App extends Component {
             <IndexRoute component={Calendar} />
             <Route path="calendar" component={Calendar} />
             <Route path="day/:id" component={SingleDay} />
-            <Route path="meal/:id" component={Meal} />
+            <Route path="meal/:id/:date/:type" component={Meal} />
             <Route path="dishes" component={Dishes} />
             <Route path="ingredients" component={Ingredients} />
           </Route>

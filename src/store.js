@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
-import moment from 'moment';
 
 const initialState = {
   userData: {},
@@ -12,29 +11,22 @@ const initialState = {
     dishes: 3,
     ingredients: 4
   },
-  days: [
-    {
-      id: '0',
-      date: moment('2016-09-01', 'YYYY-MM-DD'),
+  days: {
+    '2016-09-01': {
+      date: '2016-09-01',
       mealIds: {
-        breakfast: 0,
-        lunch: 1,
-        dinner: 2
       }
     },
-    {
-      id: '1',
-      date: moment('2016-09-02', 'YYYY-MM-DD'),
+    '2016-09-02': {
+      date: '2016-09-02',
       mealIds: {
-        breakfast: 0,
-        lunch: 1,
-        dinner: 2
       }
     }
-  ],
+  },
   meals: {
     0: { // 9/1/16 breakfast
       id: '0',
+      type: 'breakfast',
       peopleDistribution: {
         0: 'home',
         1: 'outside food',
@@ -42,13 +34,13 @@ const initialState = {
         3: 'home'
       },
       dishDistribution: {
-        0: { "-KSbVHP_Y2P1YUOSuTq2": 1 },
-        2: { "-KSbV1X_jqdD1dO1Rns5": 1 },
-        3: { "-KSbV1X_jqdD1dO1Rns5": 1 }
+        "-KSbVHP_Y2P1YUOSuTq2": { 0: 1 },
+        "-KSbV1X_jqdD1dO1Rns5": { 2: 1, 3: 1 }
       }
     },
     1: { // 9/1/16 lunch
-      id: '0',
+      id: '1',
+      type: 'lunch',
       peopleDistribution: {
         0: 'home',
         1: 'outside food',
@@ -56,13 +48,12 @@ const initialState = {
         3: 'home'
       },
       dishDistribution: {
-        0: { "-KSbV1X_jqdD1dO1Rns5": 2 },
-        2: { "-KSbV1X_jqdD1dO1Rns5": 1 },
-        3: { "-KSbV1X_jqdD1dO1Rns5": 1 }
+        "-KSbV1X_jqdD1dO1Rns5": { 0: 2, 2: 1, 3: 1 }
       }
     },
     2: { // 9/1/16 dinner
-      id: '0',
+      id: '2',
+      type: 'dinner',
       peopleDistribution: {
         0: 'home',
         1: 'home',
@@ -70,21 +61,17 @@ const initialState = {
         3: 'home'
       },
       dishDistribution: {
-        0: {
-          "-KSYl6PokYyB8MYB6bHm": 1,
-          "-KSbV7yPwj3M3olk4sR0": 1
+        "-KSYl6PokYyB8MYB6bHm": {
+          0: 1,
+          1: 1,
+          2: 0.75,
+          3: 0.5
         },
-        1: {
-          "-KSYl6PokYyB8MYB6bHm": 1,
-          "-KSbV7yPwj3M3olk4sR0": 1
-        },
-        2: {
-          "-KSYl6PokYyB8MYB6bHm": 0.75,
-          "-KSbV7yPwj3M3olk4sR0": 0.75
-        },
-        3: {
-          "-KSYl6PokYyB8MYB6bHm": 0.5,
-          "-KSbV7yPwj3M3olk4sR0": 0.5
+        "-KSbV7yPwj3M3olk4sR0": {
+          0: 1,
+          1: 1,
+          2: 0.75,
+          3: 0.5
         }
       }
     }

@@ -20,7 +20,7 @@ class Main extends Component {
     // need to add error handling
   }
   render() {
-    if (this.props.userData.selectedPlanId) {
+    if (this.props.userData.selectedPlanId && this.props.planDataLoaded) {
       return (
         <div className="main-container">
           <div className="menu-bar">
@@ -35,6 +35,9 @@ class Main extends Component {
         </div>
       );
     } else {
+      if (this.props.userData.selectedPlanId && !this.props.planDataLoaded) {
+        return <div className="main-container">loading plan data</div>
+      }
       return <div className="main-container"><PlanPicker /></div>;
     }
   }
@@ -47,7 +50,8 @@ Main.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    userData: state.userData
+    userData: state.userData,
+    planDataLoaded: state.ui.planDataLoaded
   };
 }
 

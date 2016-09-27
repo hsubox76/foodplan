@@ -1,0 +1,37 @@
+.meal-view {
+  width: 80%;
+  margin: auto;
+}
+
+.meal-view .dish-row,
+.meal-view .dish-header-row {
+  display: flex;
+}
+
+.meal-view .dish-name,
+.meal-view .dish-header-spacer {
+  display: flex;
+  flex: 0 0 200px;
+  padding: 5px;
+  margin: 2px;
+}
+
+.meal-view .dish-row-qty,
+.meal-view .dish-header-name {
+  display: flex;
+  flex: 0 0 100px;
+  padding: 5px;
+  margin: 2px;
+}
+
+.meal-view input[type=number] {
+  width: 50px;
+  font-size: 16px;
+}
+
+.add-dish-button,
+.save-meal-button {
+  margin-top: 10px;
+  margin-left: 5px;
+  width: 200px;
+}

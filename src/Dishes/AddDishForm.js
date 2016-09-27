@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
-import IngredientSelect from './IngredientSelect';
+import ItemSelect from '../Shared/ItemSelect';
+import '../css/Shared.css';
 
 class AddDishForm extends Component {
   constructor() {
@@ -53,11 +54,11 @@ class AddDishForm extends Component {
           ingredient {index + 1}
         </div>
         <div className="row-text">
-          <IngredientSelect
-            selectedIngredientId={ingredient.id}
-            onIngredientNameSelect={(ingredient) =>
+          <ItemSelect
+            selectedItemId={ingredient.id}
+            onItemNameSelect={(ingredient) =>
               this.onIngredientNameSelect(ingredient, index)}
-            sortedIngredients={sortedIngredients}
+            sortedItems={sortedIngredients}
           />
         </div>
         <div className="row-text">

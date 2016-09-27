@@ -1,6 +1,14 @@
 import _ from 'lodash';
 import { ACTIONS } from './Actions/actions';
 
+function ui(state = {}, action) {
+  switch(action.type) {
+    case ACTIONS.SET_PLAN_DATA:
+      return _.extend({}, state, {planDataLoaded: true});
+    default:
+      return state;
+  }
+}
 function userData(state = {}, action) {
   const payload = action.payload;
   switch(action.type) {
@@ -20,8 +28,17 @@ function userData(state = {}, action) {
       return state;
   }
 }
-function days(state = [], action) {
-  return state;
+function days(state = {}, action) {
+  const payload = action.payload;
+  switch(action.type) {
+    case ACTIONS.SET_PLAN_DATA:
+      if (payload.days) {
+        return _.keyBy(payload.days, 'date');
+      }
+      return state;
+    default:
+      return state;
+  }
 };
 function lastId(state = [], action) {
   const payload = action.payload;
@@ -67,7 +84,16 @@ function dishes(state = {}, action) {
   }
 };
 function meals(state = {}, action) {
-  return state;
+  const payload = action.payload;
+  switch(action.type) {
+    case ACTIONS.SET_PLAN_DATA:
+      if (payload.meals) {
+        return _.keyBy(payload.meals, 'id');
+      }
+      return state;
+    default:
+      return state;
+  }
 };
 function people(state = {}, action) {
   return state;
@@ -80,7 +106,8 @@ function reducer (state = {}, action) {
     ingredients: ingredients(state.ingredients, action),
     dishes: dishes(state.dishes, action),
     meals: meals(state.meals, action),
-    people: people(state.people, action)
+    people: people(state.people, action),
+    ui: ui(state.ui, action)
   }
 }
 
