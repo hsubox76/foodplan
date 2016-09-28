@@ -9,15 +9,20 @@ class AddDishForm extends Component {
     this.onIngredientNameSelect = this.onIngredientNameSelect.bind(this);
     this.state = {
       name: '',
-      ingredients: [{}],
+      ingredients: [{ quantity: 0 }],
+      ownIngredient: false,
       error: null
     }
+  }
+  onOwnIngredientClick() {
+    this.setState({ ownIngredient: !this.state.ownIngredient })
   }
   onNameChange(e) {
     this.setState({name: e.target.value});
   }
   addIngredientField() {
     this.setState({
+      ownIngredient: false,
       ingredients: this.state.ingredients.concat({})
     });
   }
@@ -27,14 +32,32 @@ class AddDishForm extends Component {
     if (this.state.name !== ''
       && this.state.ingredients.length > 0
       && !_.isEmpty(this.state.ingredients[0])) {
-      this.props.addDish({
-        name: this.state.name,
-        ingredientIds: _.map(this.state.ingredients, ingredient => ingredient.id)
-      });
+        if (this.state.ownIngredient) {
+          this.props.addDishAsOwnIngredient(this.state.name);
+        } else {
+          this.props.addDish({
+            name: this.state.name,
+            ingredientQuantities: _.map(this.state.ingredients, ingredient => ({
+              id: ingredient.id,
+              quantity: ingredient.quantity
+            }))
+          });
+        }
       this.props.hideForm();
     } else {
       this.setState({ error: 'error: something missing'});
     }
+  }
+  onIngredientQuantityChange(quantity, index) {
+    const ingredients = this.state.ingredients;
+    // need to check for duplicates
+    const newIngredients =
+      ingredients.slice(0, index)
+        .concat(_.extend({}, this.state.ingredients[index], { quantity }))
+        .concat(ingredients.slice(index + 1));
+    this.setState({
+      ingredients: newIngredients
+    });
   }
   onIngredientNameSelect(ingredient, index) {
     const ingredients = this.state.ingredients;
@@ -43,7 +66,10 @@ class AddDishForm extends Component {
       ingredients.slice(0, index)
         .concat(ingredient)
         .concat(ingredients.slice(index + 1));
-    this.setState({ingredients: newIngredients});
+    this.setState({
+      ownIngredient: false,
+      ingredients: newIngredients
+    });
   }
   render() {
     const sortedIngredients = _.sortBy(this.props.ingredients, 'name');
@@ -61,7 +87,12 @@ class AddDishForm extends Component {
           />
         </div>
         <div className="row-text">
-          <input className="ingredient-quantity" placeholder="qty" type="number" />
+          <input
+            className="ingredient-quantity"
+            placeholder="qty"
+            type="number"
+            onChange={(e) => this.onIngredientQuantityChange(e.target.value, index)}
+          />
         </div>
         <div className="row-text">{ingredient.unit}</div>
       </div>
@@ -76,6 +107,15 @@ class AddDishForm extends Component {
             value={this.state.name}
             onChange={this.onNameChange}
           />
+          <div className="own-ingredient">
+            <span
+              className={"fa " + (this.state.ownIngredient ? "fa-check-square" : "fa-square")}
+              onClick={() => this.onOwnIngredientClick()}
+            />
+            <span className="own-ingredient-text">
+              no ingredients (a new ingredient entry will be created with same name as this dish)
+            </span>
+          </div>
         </div>
         {ingredientRows}
         <div className="add-dish-form-row">
@@ -107,6 +147,7 @@ class AddDishForm extends Component {
 
 AddDishForm.propTypes = {
   addDish: PropTypes.func.isRequired,
+  addDishAsOwnIngredient: PropTypes.func.isRequired,
   hideForm: PropTypes.func.isRequired,
   ingredients: PropTypes.object,
 };

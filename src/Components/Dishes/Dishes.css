@@ -17,8 +17,6 @@ td.dish-name > div {
   font-weight: bold;
 }
 .add-dish-button {
-  border: 1px solid green;
-  color: green;
   padding: 5px;
   margin: 5px;
   display: inline-block;
@@ -67,11 +65,26 @@ td.dish-name > div {
 
 .ingredient-quantity {
   margin: 0 5px;
-  height: 20px;
+  height: 25px;
   font-size: 16px;
-  width: 40px;
+  width: 50px;
 }
 
 .new-ingredient-submit {
   width: 100px;
+}
+
+.own-ingredient {
+  display: flex;
+  margin-left: 20px;
+  align-items: flex-start;
+}
+
+.own-ingredient-text {
+  font-size: 14px;
+  color: #777;
+}
+
+.own-ingredient .fa {
+  margin-right: 10px;
 }

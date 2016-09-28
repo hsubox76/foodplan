@@ -124,8 +124,34 @@ export function addDish(dish) {
     newDishRef.set({
       id: newDishRef.key,
       name: dish.name,
-      ingredientIds: dish.ingredientIds
+      ingredientQuantities: dish.ingredientQuantities
     });
+  }
+}
+
+export function addDishAsOwnIngredient(dishName) {
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    const newIngredientRef =
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients').push();
+    newIngredientRef.set({
+      name: dishName,
+      id: newIngredientRef.key
+    });
+    const newDishRef =
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/dishes').push();
+    newDishRef.set({
+      id: newDishRef.key,
+      name: dishName,
+      ingredientQuantities: [{ id: newIngredientRef.key, quantity: 1 }]
+    });
+  }
+}
+
+export function deleteDish(id) {
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/dishes/' + id).remove();
   }
 }
 

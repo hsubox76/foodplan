@@ -1,10 +1,10 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import '../../css/Dishes.css';
+import './Dishes.css';
 import DishRow from './DishRow';
 import AddDishForm from './AddDishForm';
-import { addDish } from '../../Actions/actions';
+import { addDish, addDishAsOwnIngredient, deleteDish } from '../../Actions/actions';
 
 class Dishes extends Component {
   constructor() {
@@ -23,13 +23,23 @@ class Dishes extends Component {
   }
   render() {
     const dishRows = _.map(this.props.dishes, dish => {
-      const ingredients = _.map(dish.ingredientIds,
-        ingredientId => this.props.ingredients[ingredientId]);
-      return <DishRow key={dish.id} dish={dish} ingredients={ingredients} />;
+      const ingredients = _.map(dish.ingredientQuantities,
+        (ingredientQuantity) => {
+          return _.extend({}, this.props.ingredients[ingredientQuantity.id], {quantity: ingredientQuantity.quantity})
+        }
+      );
+      return (
+        <DishRow
+          key={dish.id}
+          dish={dish}
+          ingredients={ingredients}
+          deleteDish={this.props.deleteDish}
+        />
+      );
     });
     const addDishButton = (
       <div
-        className="add-dish-button"
+        className="button add-dish-button"
         onClick={this.openDishForm}
       >
         add a dish
@@ -42,6 +52,7 @@ class Dishes extends Component {
           ? <AddDishForm
               hideForm={this.closeDishForm}
               addDish={this.props.addDish}
+              addDishAsOwnIngredient={this.props.addDishAsOwnIngredient}
               ingredients={this.props.ingredients}
             />
           : addDishButton}
@@ -68,7 +79,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addDish: (dish) => dispatch(addDish(dish))
+    addDish: (dish) => dispatch(addDish(dish)),
+    addDishAsOwnIngredient: (dish) => dispatch(addDishAsOwnIngredient(dish)),
+    deleteDish: (id) => dispatch(deleteDish(id))
   }
 }
 

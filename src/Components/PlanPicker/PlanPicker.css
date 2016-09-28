@@ -24,8 +24,8 @@
   background-color: #abcdef;
 }
 
-input[type=text] {
-  height: 20px;
+.plan-picker-container input[type=text] {
+  height: 25px;
   font-size: 16px;
   padding: 5px;
 }
