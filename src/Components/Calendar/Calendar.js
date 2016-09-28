@@ -4,24 +4,21 @@ import _ from 'lodash';
 import moment from 'moment';
 import DayBox from '../DayBox/DayBox';
 import DateForm from './DateForm';
+import { setDateRange } from '../../Actions/actions';
 
 class Calendar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      startDate: moment().format('YYYY-MM-DD'),
-      numDays: 5
+  componentWillMount() {
+    // set default range
+    if (!this.props.ui.startDate) {
+      this.props.setDateRange(moment().startOf('day').format('YYYY-MM-DD'), 5);
     }
   }
-  onRangeChange(newDate, numDays) {
-    this.setState({
-      startDate: moment(newDate).format('YYYY-MM-DD'),
-      numDays
-    });
-  }
   render() {
-    const startMoment = moment(this.state.startDate);
-    const dates = _.range(startMoment, moment(startMoment).add(this.state.numDays, 'days'), moment.duration(1, 'day'));
+    if (!this.props.ui.startDate) {
+      return (<div>setting default dates</div>);
+    }
+    const startMoment = moment(this.props.ui.startDate);
+    const dates = _.range(startMoment, moment(startMoment).add(this.props.ui.numDays, 'days'), moment.duration(1, 'day'));
     const dayBoxes = _.map(dates, date => {
       const day = this.props.days[moment(date).format('YYYY-MM-DD')]
         || {
@@ -45,9 +42,9 @@ class Calendar extends Component {
       <div>
         <h1>Calendar</h1>
         <DateForm
-          startMoment={moment(this.state.startDate, 'YYYY-MM-DD')}
-          numDays={this.state.numDays}
-          onRangeChange={(date, numDays) => this.onRangeChange(date, numDays)}
+          startMoment={moment(this.props.ui.startDate, 'YYYY-MM-DD')}
+          numDays={this.props.ui.numDays}
+          onRangeChange={this.props.setDateRange}
         />
         <div className="calendar-container">
           {dayBoxes}
@@ -58,7 +55,6 @@ class Calendar extends Component {
 }
 
 Calendar.propTypes = {
-  range: PropTypes.object,
   days: PropTypes.object,
   meals: PropTypes.object,
   dishes: PropTypes.object,
@@ -66,15 +62,9 @@ Calendar.propTypes = {
 
 };
 
-Calendar.defaultProps = {
-  range: {
-    start: '2016-09-01',
-    end: '2016-09-05'
-  }
-}
-
 function mapStateToProps(state) {
   return {
+    ui: state.ui,
     days: state.days,
     meals: state.meals,
     dishes: state.dishes,
@@ -82,4 +72,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Calendar);
+function mapDispatchToProps(dispatch) {
+  return {
+    setDateRange: (startDate, numDays) => dispatch(setDateRange(startDate, numDays))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calendar);

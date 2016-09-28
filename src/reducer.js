@@ -2,9 +2,15 @@ import _ from 'lodash';
 import { ACTIONS } from './Actions/actions';
 
 function ui(state = {}, action) {
+  const payload = action.payload;
   switch(action.type) {
     case ACTIONS.SET_PLAN_DATA:
       return _.extend({}, state, {planDataLoaded: true});
+    case ACTIONS.SET_DATE_RANGE:
+      return _.extend({}, state, {
+        startDate: payload.startDate,
+        numDays: payload.numDays
+      });
     default:
       return state;
   }
@@ -36,15 +42,6 @@ function days(state = {}, action) {
         return _.keyBy(payload.days, 'date');
       }
       return state;
-    default:
-      return state;
-  }
-};
-function lastId(state = [], action) {
-  const payload = action.payload;
-  switch(action.type) {
-    case ACTIONS.ADD_INGREDIENT:
-      return _.extend({}, state, { ingredients: payload.id });
     default:
       return state;
   }
@@ -83,6 +80,18 @@ function dishes(state = {}, action) {
       return state;
   }
 };
+function favoriteMeals(state = {}, action) {
+  const payload = action.payload;
+  switch(action.type) {
+    case ACTIONS.SET_PLAN_DATA:
+      if (payload.favoritemeals) {
+        return _.keyBy(payload.favoritemeals, 'id');
+      }
+      return state;
+    default:
+      return state;
+  }
+};
 function meals(state = {}, action) {
   const payload = action.payload;
   switch(action.type) {
@@ -102,10 +111,10 @@ function reducer (state = {}, action) {
   return {
     userData: userData(state.userData, action),
     days: days(state.days, action),
-    lastId: lastId(state.lastId, action),
     ingredients: ingredients(state.ingredients, action),
     dishes: dishes(state.dishes, action),
     meals: meals(state.meals, action),
+    favoriteMeals: favoriteMeals(state.favoriteMeals, action),
     people: people(state.people, action),
     ui: ui(state.ui, action)
   }

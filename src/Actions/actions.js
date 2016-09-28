@@ -10,11 +10,13 @@ export const ACTIONS = {
   SET_USER: 'SET_USER',
   SET_PLAN_IDS: 'SET_PLAN_IDS',
   SET_SELECTED_PLAN_ID: 'SET_SELECTED_PLAN_ID',
-  ADD_INGREDIENT: 'ADD_INGREDIENT',
-  DELETE_INGREDIENT: 'DELETE_INGREDIENT',
-  EDIT_INGREDIENT: 'EDIT_INGREDIENT',
-  SET_PLAN_DATA: 'SET_PLAN_DATA'
+  SET_PLAN_DATA: 'SET_PLAN_DATA',
+  SET_DATE_RANGE: 'SET_DATE_RANGE'
 };
+
+export function setDateRange(startDate, numDays) {
+  return { type: ACTIONS.SET_DATE_RANGE, payload: { startDate, numDays } }
+}
 
 export function writeToFirebasePlanWith(destination, data) {
   return (dispatch, getStore) => {
@@ -92,7 +94,6 @@ export function addIngredient(name, unit) {
       unit: unit,
       id: newIngredientRef.key
     });
-    dispatch({ type: ACTIONS.ADD_INGREDIENT, payload: { name, unit, id: newIngredientRef.key } });
   }
 }
 
@@ -105,7 +106,6 @@ export function editIngredient(name, unit, id) {
       unit: unit,
       id: id
     });
-    dispatch({ type: ACTIONS.EDIT_INGREDIENT, payload: { name, unit, id } });
   }
 }
 
@@ -113,7 +113,6 @@ export function deleteIngredient(id) {
   return (dispatch, getStore) => {
     const { userData } = getStore();
     firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients/' + id).remove();
-    dispatch({ type: ACTIONS.DELETE_INGREDIENT, payload: { id } });
   }
 }
 
@@ -155,6 +154,21 @@ export function editMeal(meal) {
     const { userData } = getStore();
     firebase.database().ref(DB_PATH + userData.selectedPlanId + '/meals/' + meal.id).set({
       id: meal.id,
+      type: meal.type,
+      peopleDistribution: meal.peopleDistribution,
+      dishDistribution: meal.dishDistribution
+    });
+  }
+}
+
+export function addFavoriteMeal(meal) {
+  return (dispatch, getStore) => {
+    const { userData } = getStore();
+    const newMealRef =
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/favoritemeals').push();
+    newMealRef.set({
+      id: newMealRef.key,
+      name: meal.name,
       type: meal.type,
       peopleDistribution: meal.peopleDistribution,
       dishDistribution: meal.dishDistribution

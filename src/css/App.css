@@ -51,10 +51,12 @@ h1 {
 }
 
 .menu-bar a {
+  color: #fff;
   text-decoration: none;
   width: 100%;
   height: 100%;
   display: block;
+  cursor: pointer;
 }
 
 .menu-bar a:link,

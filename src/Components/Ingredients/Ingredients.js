@@ -76,8 +76,7 @@ Ingredients.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    ingredients: state.ingredients,
-    lastIngredientId: state.lastId.ingredients
+    ingredients: state.ingredients
   }
 }
 

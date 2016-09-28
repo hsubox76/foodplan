@@ -29,9 +29,62 @@
   font-size: 16px;
 }
 
-.add-dish-button,
-.save-meal-button {
+.meal-view .dish-editing-area {
+  border: 1px solid #ccc;
+}
+
+.favorite-selector-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.favorite-selector-box span {
+  margin-right: 10px;
+}
+
+.add-dish-button {
   margin-top: 10px;
   margin-left: 5px;
   width: 200px;
+}
+
+.save-buttons {
+  margin: 30px 5px 10px 5px;
+}
+
+.favorite-meal-form {
+  display: flex;
+  padding-top: 10px;
+}
+
+.favorite-meal-form input {
+  height: 30px;
+  width: 200px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.favorite-meal-button {
+  margin-left: 10px;
+  width: 250px;
+}
+
+.favorite-meal-button span {
+  margin-right: 8px;
+}
+
+.save-meal-button {
+  width: 200px;
+  margin-right: 10px;
+}
+
+.back-to-cal-button {
+  margin: 10px 0;
+  width: 170px;
+}
+
+.back-to-cal-button span {
+  margin-right: 8px;
+  margin-bottom: 20px;
 }

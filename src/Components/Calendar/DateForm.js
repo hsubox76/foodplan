@@ -44,7 +44,8 @@ class DateForm extends Component {
       moment()
         .month(this.state.month)
         .date(this.state.day)
-        .year(this.state.year),
+        .year(this.state.year)
+        .format('YYYY-MM-DD'),
       this.state.numDays
     );
   }

@@ -94,7 +94,7 @@ class DayBox extends Component {
           return (
             <td
               className={'meal-person-cell'}
-              style={{width: this.props.width / 4 * 0.8}}
+              style={{width: (this.props.width - 30) / 4 - 5}}
               key={person.id}
             >
               <Link

@@ -20,10 +20,17 @@ class ItemSelect extends Component {
       selectedId: item.id
     });
   }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedItemId && nextProps.selectedItemId !== this.state.selectedId) {
+      this.setState({
+        selectedId: nextProps.selectedItemId
+      });
+    }
+  }
   render() {
     const options = _.map(this.props.sortedItems, (item, index) =>
       <div
-        key={item.id}
+        key={item.id || index}
         className={"option-item " + (this.state.selectedId === item.id && 'option-item-selected')}
         style={ item.color ? { color: item.color } : {}}
         onClick={() => this.onSelect(item, index)}
@@ -44,7 +51,7 @@ class ItemSelect extends Component {
           style={ _.has(selectedItem, 'color') ? { color: selectedItem.color } : {}}
         >{!_.isNil(this.state.selectedId)
           ? selectedItem.name
-          : 'pick an item'
+          : this.props.defaultMessage
         }</span>
         <span className="fa fa-caret-down" />
       </div>
@@ -62,12 +69,14 @@ ItemSelect.propTypes = {
   sortedItems: PropTypes.array,
   onItemNameSelect: PropTypes.func.isRequired,
   width: PropTypes.number,
-  height: PropTypes.number
+  height: PropTypes.number,
+  defaultMessage: PropTypes.string,
 };
 
 ItemSelect.defaultProps = {
   width: 200,
-  height: 25
+  height: 25,
+  defaultMessage: 'pick an item'
 }
 
 export default ItemSelect;
