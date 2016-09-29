@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 450px;
+  align-items: center;
   justify-content: flex-start;
 }
 

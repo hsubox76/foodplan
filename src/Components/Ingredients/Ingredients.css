@@ -34,20 +34,35 @@ table.ingredients > tbody > tr > td {
   flex-direction: column;
 }
 .add-ingredient-form-container {
+  padding: 5px;
   margin: 5px;
-  display: flex;
-  max-width: 80%;
-  border: 2px solid #76c33c;
+  width: 80%;
+  max-width: 720px;
+  border: 2px solid #07889B;
   border-radius: 4px;
-  color: #76c33c;
+  color: #07889B;
 }
-form {
+.ingredients-page .add-ingredient-form {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.ingredient-name-field,
+.ingredient-unit-field {
+  flex: 1 0 200px;
+  height: 30px;
+  margin-right: 10px;
+}
+.ingredient-unit-field {
+  flex: 0 0 80px;
+}
+.button-add {
+  margin-right: 10px;
 }
 .ingredients .form-field {
   height: 24px;
   font-size: 16px;
 }
-.ingredients input {
+table.ingredients input {
   width: 300px;
 }

@@ -27,15 +27,14 @@
 .option-item {
   margin: 2px;
   padding: 3px;
-  border: 1px solid #efe;
 }
 
 .option-item-selected {
-  background-color: #576;
+  background-color: #e37222;
   color: #fff;
 }
 
 .option-item:hover {
   color: #222;
-  background-color: #cdc;
+  background-color: #eeaa7b;
 }

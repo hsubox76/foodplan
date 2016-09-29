@@ -30,7 +30,8 @@
 }
 
 .meal-view .dish-editing-area {
-  border: 1px solid #ccc;
+  border: 1px solid #07889B;
+  padding: 5px;
 }
 
 .favorite-selector-box {
@@ -59,6 +60,7 @@
 }
 
 .favorite-meal-form input {
+  padding-left: 5px;
   height: 30px;
   width: 200px;
   font-weight: 300;

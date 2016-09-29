@@ -24,7 +24,7 @@ class DayBox extends Component {
     this.setState({hoveredMealName: null});
   }
   renderMealRow(mealName, day) {
-    const mealId = day.mealIds[mealName];
+    const mealId = day.mealIds && day.mealIds[mealName];
     const mealClasses = ['meal-row'];
     if (this.state.hoveredMealName === mealName) {
       mealClasses.push('meal-row-hover');

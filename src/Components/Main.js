@@ -24,10 +24,15 @@ class Main extends Component {
       return (
         <div className="main-container">
           <div className="menu-bar">
-            <div><Link to='/calendar'>calendar</Link></div>
-            <div><Link to='/dishes'>dishes</Link></div>
-            <div><Link to='/ingredients'>ingredients</Link></div>
-            <div><a onClick={(e) => this.signOut(e)}>sign out</a></div>
+            <div className="menu-bar-left">
+              <Link to='/calendar'>calendar</Link>
+              <Link to='/favoritemeals'>meals</Link>
+              <Link to='/dishes'>dishes</Link>
+              <Link to='/ingredients'>ingredients</Link>
+            </div>
+            <div className="menu-bar-right">
+              <a onClick={(e) => this.signOut(e)}>sign out</a>
+            </div>
           </div>
           <div className="content-container">
             {this.props.children}

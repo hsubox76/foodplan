@@ -22,7 +22,11 @@ class Meal extends Component {
     this.onChangeQuantity = this.onChangeQuantity.bind(this);
     this.onChangeMealType = this.onChangeMealType.bind(this);
     this.addDish = this.addDish.bind(this);
-    const meal = this.props.meals[this.props.params.id];
+    this.renderFavoriteSelectorBox = this.renderFavoriteSelectorBox.bind(this);
+    this.renderAddFavoriteForm = this.renderAddFavoriteForm.bind(this);
+    const meal = _.includes(this.props.route.path, 'favoritemeal/')
+      ? this.props.favoriteMeals[this.props.params.id]
+      : this.props.meals[this.props.params.id];
     if (meal) {
       this.state = this.convertMealToState(meal);
     } else {
@@ -43,11 +47,20 @@ class Meal extends Component {
         distribution: dist
       })),
       peopleDistribution: _.cloneDeep(meal.peopleDistribution),
-      favoriteName: ''
+      favoriteName: '',
+      name: meal.name || null,
+      isFavorite: meal.name ? true : false
     });
   }
   formatMealFromState() {
     const dishDistribution = _.reduce(this.state.dishes, (acc, dish) => {
+      // skip empty fields (no id, no distributions filled in)
+      if (!dish.id) {
+        return acc;
+      }
+      if (_.every(dish.distribution, item => item === '' || item === '0')) {
+        return acc;
+      }
       acc[dish.id] = dish.distribution;
       return acc;
     }, {});
@@ -116,7 +129,7 @@ class Meal extends Component {
     }
     browserHistory.goBack();
   }
-  favoriteMeal() {
+  addMealToFavorites() {
     const meal = this.formatMealFromState();
     if (this.state.favoriteName) {
       meal.name = this.state.favoriteName;
@@ -130,21 +143,48 @@ class Meal extends Component {
       });
     }
   }
-  render() {
+  renderFavoriteSelectorBox() {
     const sortedFavoriteMeals = _(this.props.favoriteMeals).values().sortBy('name').value();
+    return (
+      <div className="favorite-selector-box">
+        <span className="fa fa-star" />
+        <ItemSelect
+          sortedItems={sortedFavoriteMeals}
+          defaultMessage="copy from a favorite meal"
+          width={250}
+          onItemNameSelect={(meal) => this.applyMeal(meal)}
+        />
+      </div>
+    );
+  }
+  renderAddFavoriteForm() {
+    return (
+      <div className="favorite-meal-form">
+        <input
+          type="text"
+          value={this.state.favoriteName}
+          placeholder="enter name to add favorite"
+          onChange={(e) => this.onChangeFavoriteName(e.target.value)}
+          />
+        <div
+          className="button button-cool favorite-meal-button"
+          onClick={() => this.addMealToFavorites()}
+        >
+          <span className="fa fa-star" />
+          Add Meal To Favorites
+        </div>
+      </div>
+    );
+  }
+  render() {
+    const title = this.props.params.date && this.props.params.type
+      ? moment(this.props.params.date, 'YYYY-MM-DD').format('ddd, MMM DD') + " : " +  _.capitalize(this.props.params.type)
+      : `Favorite Meal : ${this.state.name}`;
     return (
       <div className="meal-view">
         <div className="back-to-cal-button"><Link to="/calendar"><span className="fa fa-chevron-left" />back to calendar</Link></div>
-        <h1>{moment(this.props.params.date, 'YYYY-MM-DD').format('ddd, MMM DD')} : {_.capitalize(this.props.params.type)}</h1>
-        <div className="favorite-selector-box">
-          <span className="fa fa-star" />
-          <ItemSelect
-            sortedItems={sortedFavoriteMeals}
-            defaultMessage="copy from a favorite meal"
-            width={250}
-            onItemNameSelect={(meal) => this.applyMeal(meal)}
-          />
-        </div>
+        <h1>{title}</h1>
+        {!this.state.isFavorite && this.renderFavoriteSelectorBox()}
         <MealEditor
           people={this.props.people}
           dishes={this.state.dishes}
@@ -157,26 +197,12 @@ class Meal extends Component {
         />
         <div className="save-buttons">
           <div
-            className="button save-meal-button"
+            className="button button-cool save-meal-button"
             onClick={() => this.saveMeal()}
           >
-            Save Meal
+            Save {this.state.isFavorite ? 'Favorite' : 'Meal'}
           </div>
-          <div className="favorite-meal-form">
-            <input
-              type="text"
-              value={this.state.favoriteName}
-              placeholder="enter name to add favorite"
-              onChange={(e) => this.onChangeFavoriteName(e.target.value)}
-              />
-            <div
-              className="button favorite-meal-button"
-              onClick={() => this.favoriteMeal()}
-            >
-              <span className="fa fa-star" />
-              Add Meal To Favorites
-            </div>
-          </div>
+          {!this.state.isFavorite && this.renderAddFavoriteForm()}
           {this.state.favoriteNameFeedback
             && <div className="favorite-meal-form-feedback">{this.state.favoriteNameFeedback}</div>}
         </div>

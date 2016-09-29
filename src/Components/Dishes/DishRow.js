@@ -23,7 +23,12 @@ class DishRow extends Component {
     const ingredientsList = (
       <div className="details-container">
         {_.map(this.props.ingredients, ingredient => 
-          <div key={ingredient.id} className="ingredient">{ingredient.name} ({ingredient.quantity} {ingredient.unit || 'pc'})</div>
+          <div
+            key={`${dish.id}-${ingredient.id}`}
+            className="ingredient"
+          >
+            {ingredient.name} ({ingredient.quantity} {ingredient.unit || 'pc'})
+          </div>
         )}
       </div>
     );
@@ -36,7 +41,7 @@ class DishRow extends Component {
           </div>
           {this.state.detailsVisible && ingredientsList}
         </td>
-        <td>
+        <td className="button-cell">
           <div
             className="button button-cool"
             onClick={() => this.props.openEditForm(dish.id)}
@@ -44,7 +49,7 @@ class DishRow extends Component {
             edit
           </div>
         </td>
-        <td>
+        <td className="button-cell">
           <div
             className="button button-warm"
             onClick={() => this.props.deleteDish(dish.id)}

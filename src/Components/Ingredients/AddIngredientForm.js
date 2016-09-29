@@ -8,12 +8,21 @@ class AddIngredientForm extends Component {
     this.onAddClick = this.onAddClick.bind(this);
     this.state = {
       name: '',
-      unit: ''
+      unit: '',
+      error: null
     }
   }
   onAddClick(e) {
     e.preventDefault();
     // need to do some validation or whatever
+    if (!this.state.name) {
+      this.setState({ error: 'Need an ingredient name.' });
+      return;
+    }
+    if (this.props.isIngredientDuplicate(this.state.name)) {
+      this.setState({ error: 'Ingredient with same name already exists.' });
+      return;
+    }
     this.props.addIngredient(this.state.name, this.state.unit);
     this.props.hideForm();
   }
@@ -26,7 +35,7 @@ class AddIngredientForm extends Component {
   render() {
     return (
       <div className="add-ingredient-form-container">
-        <form>
+        <form className="add-ingredient-form">
           <input
             className="form-field ingredient-name-field"
             type="text"
@@ -43,15 +52,16 @@ class AddIngredientForm extends Component {
           />
           <div
             onClick={this.onAddClick}
-            className="form-field button new-ingredient-submit">
+            className="form-field button button-cool button-add">
               Add
           </div>
           <div
             onClick={this.props.hideForm}
-            className="form-field button new-ingredient-submit">
+            className="form-field button button-neutral">
               Cancel
           </div>
         </form>
+        <div className="add-ingredient-error">{this.state.error}</div>
       </div>
     );
   }
@@ -60,6 +70,7 @@ class AddIngredientForm extends Component {
 AddIngredientForm.propTypes = {
   addIngredient: PropTypes.func.isRequired,
   hideForm: PropTypes.func.isRequired,
+  isIngredientDuplicate: PropTypes.func.isRequired,
 };
 
 export default AddIngredientForm;

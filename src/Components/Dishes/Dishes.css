@@ -17,6 +17,9 @@ td.dish-name > div {
 .dish-name-text {
   font-weight: bold;
 }
+td.button-cell {
+  vertical-align: top;
+}
 .add-dish-button {
   padding: 5px;
   margin: 5px;

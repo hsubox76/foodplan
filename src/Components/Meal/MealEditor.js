@@ -48,7 +48,7 @@ class MealEditor extends Component {
               </div>)}
           </div>
         )}
-        <div className="button add-dish-button" onClick={() => this.props.addDish()}>Add Dish</div>
+        <div className="button button-cool add-dish-button" onClick={() => this.props.addDish()}>Add Dish</div>
       </div>
     );
   }

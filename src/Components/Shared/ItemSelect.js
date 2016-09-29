@@ -102,7 +102,7 @@ ItemSelect.propTypes = {
 
 ItemSelect.defaultProps = {
   width: 200,
-  height: 25,
+  height: 30,
   defaultMessage: 'pick an item'
 }
 

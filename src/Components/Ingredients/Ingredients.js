@@ -18,12 +18,20 @@ class Ingredients extends Component {
     }
     this.openIngredientForm = this.openIngredientForm.bind(this);
     this.closeIngredientForm = this.closeIngredientForm.bind(this);
+    this.isIngredientDuplicate = this.isIngredientDuplicate.bind(this);
   }
   openIngredientForm() {
     this.setState({addFormVisible: true});
   }
   closeIngredientForm() {
     this.setState({addFormVisible: false});
+  }
+  isIngredientDuplicate(ingredientName) {
+    if (_.find(this.props.ingredients, {name: ingredientName})) {
+      return true;
+    } else {
+      return false;
+    }
   }
   render() {
     const ingredientRows = _.map(this.props.ingredients, ingredient => {
@@ -45,13 +53,14 @@ class Ingredients extends Component {
       </div>
     );
     return (
-      <div>
+      <div className="ingredients-page">
         <h1>Ingredients</h1>
         {this.state.addFormVisible
           ? <AddIngredientForm
               addIngredient={this.props.addIngredient}
               lastIngredientId={this.props.lastIngredientId}
               hideForm={this.closeIngredientForm}
+              isIngredientDuplicate={this.isIngredientDuplicate}
             />
           : addIngredientButton}
         <table className="ingredients">

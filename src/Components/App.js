@@ -5,6 +5,7 @@ import store from '../store';
 import Main from './Main';
 import Calendar from './Calendar/Calendar';
 import Meal from './Meal/Meal';
+import FavoriteMeals from './FavoriteMeals/FavoriteMeals';
 import SingleDay from './Calendar/SingleDay';
 import Dishes from './Dishes/Dishes';
 import Ingredients from './Ingredients/Ingredients';
@@ -19,6 +20,8 @@ class App extends Component {
             <IndexRoute component={Calendar} />
             <Route path="calendar" component={Calendar} />
             <Route path="day/:id" component={SingleDay} />
+            <Route path="favoritemeals" component={FavoriteMeals} />
+            <Route path="favoritemeal/:id" component={Meal} />
             <Route path="meal/:id/:date/:type" component={Meal} />
             <Route path="dishes" component={Dishes} />
             <Route path="ingredients" component={Ingredients} />

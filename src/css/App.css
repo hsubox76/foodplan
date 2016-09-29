@@ -1,8 +1,10 @@
 body {
-  font-family: 'Open-Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #555;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 a, td, tr, div, span, input {
@@ -22,6 +24,8 @@ h1 {
 input {
   height: 25px;
   font-size: 16px;
+  color: #555;
+  font-weight: 300;
 }
 
 .main-container {
@@ -35,27 +39,42 @@ input {
 
 .menu-bar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #e37222;
 }
 
-.menu-bar > div {
-  flex: 0 0 100px;
-  display: block;
-  padding: 5px;
-  margin: 5px;
+.menu-bar-left {
+  display: flex;
+  margin-left: 20px;
 }
 
-.menu-bar > div:hover {
+.menu-bar-right {
+  display: flex;
+  margin-right: 20px;
+}
+
+.menu-bar a:hover {
   background-color: #eeaa7b;
 }
 
 .menu-bar a {
+  margin: 0 20px;
+  padding: 8px;
   color: #fff;
   text-decoration: none;
   width: 100%;
   height: 100%;
   display: block;
   cursor: pointer;
+}
+
+.menu-bar-left a:first-child {
+  margin-left: 0px;
+}
+
+.menu-bar-right a:last-child {
+  margin-right: 0px;
 }
 
 .menu-bar a:link,

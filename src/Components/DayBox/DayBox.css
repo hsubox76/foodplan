@@ -58,7 +58,7 @@
   background-color: #eee;
 }
 
-.meal-name {
+.day-box .meal-name {
   padding: 2px;
   width: 30px;
   font-weight: bold;

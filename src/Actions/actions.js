@@ -111,7 +111,21 @@ export function editIngredient(name, unit, id) {
 
 export function deleteIngredient(id) {
   return (dispatch, getStore) => {
-    const { userData } = getStore();
+    const { userData, dishes } = getStore();
+    const dishesUpdates = {};
+    _.forEach(dishes, dish => {
+      if (_.find(dish.ingredientQuantities, {id: id})) {
+        if (dish.ingredientQuantities.length === 1) {
+          dispatch(deleteDish(dish.id));
+        } else {
+          dishesUpdates[dish.id + '/ingredientQuantities' ] = _.filter(dish.ingredientQuantities, iQ => iQ.id !== id);
+        }
+      }
+    });
+    if (_.size(dishesUpdates) > 0) {
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/dishes')
+        .update(dishesUpdates, error => console.log(error));
+    }
     firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients/' + id).remove();
   }
 }
@@ -132,27 +146,62 @@ export function addDish(dish) {
 
 export function addDishAsOwnIngredient(dishName) {
   return (dispatch, getStore) => {
-    const { userData } = getStore();
-    const newIngredientRef =
-      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients').push();
-    newIngredientRef.set({
-      name: dishName,
-      id: newIngredientRef.key
-    });
+    const { userData, ingredients } = getStore();
+    const existingIngredient = _.find(ingredients, { name: dishName });
+    let ingredientId = '';
+    if (existingIngredient) {
+      ingredientId = existingIngredient.id;
+    } else {
+      const newIngredientRef =
+        firebase.database().ref(DB_PATH + userData.selectedPlanId + '/ingredients').push();
+      newIngredientRef.set({
+        name: dishName,
+        id: newIngredientRef.key
+      });
+      ingredientId = newIngredientRef.key;
+    }
     const newDishRef =
       firebase.database().ref(DB_PATH + userData.selectedPlanId + '/dishes').push();
     newDishRef.set({
       id: newDishRef.key,
       name: dishName,
       servings: 1,
-      ingredientQuantities: [{ id: newIngredientRef.key, quantity: 1 }]
+      ingredientQuantities: [{ id: ingredientId, quantity: 1 }]
     });
   }
 }
 
 export function deleteDish(id) {
   return (dispatch, getStore) => {
-    const { userData } = getStore();
+    const { userData, meals, favoriteMeals } = getStore();
+    const mealsUpdates = {};
+    const favoriteMealsUpdates = {};
+    _.forEach(meals, meal => {
+      if (_.has(meal.dishDistribution, id)) {
+        if (_.size(meal.dishDistribution) === 1) {
+          dispatch(deleteMeal(meal.id));
+        } else {
+          mealsUpdates[meal.id + '/dishDistribution/' + id ] = null;
+        }
+      }
+    });
+    _.forEach(favoriteMeals, meal => {
+      if (_.has(meal.dishDistribution, id)) {
+        if (_.size(meal.dishDistribution) === 1) {
+          dispatch(deleteMeal(meal.id));
+        } else {
+          favoriteMealsUpdates[meal.id + '/dishDistribution/' + id ] = null;
+        }
+      }
+    });
+    if (_.size(mealsUpdates) > 0) {
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/meals')
+        .update(mealsUpdates, error => console.log(error));
+    }
+    if (_.size(favoriteMealsUpdates) > 0) {
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/favoritemeals')
+        .update(favoriteMealsUpdates, error => console.log(error));
+    }
     firebase.database().ref(DB_PATH + userData.selectedPlanId + '/dishes/' + id).remove();
   }
 }
@@ -186,6 +235,18 @@ export function editMeal(meal) {
       peopleDistribution: meal.peopleDistribution,
       dishDistribution: meal.dishDistribution
     });
+  }
+}
+
+export function deleteMeal(id) {
+  return (dispatch, getStore) => {
+    const { userData, days } = getStore();
+    const dayThatHasMeal = _.find(days, day => _.includes(day.mealIds, id));
+    if (dayThatHasMeal) {
+      const mealType = _.findKey(dayThatHasMeal.mealIds, item => item === id);
+      firebase.database().ref(DB_PATH + userData.selectedPlanId + '/days/' + dayThatHasMeal.date + '/mealIds/' + mealType).remove();
+    }
+    firebase.database().ref(DB_PATH + userData.selectedPlanId + '/meals/' + id).remove();
   }
 }
 

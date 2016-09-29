@@ -1,0 +1,29 @@
+.favorite-meals .meal-box {
+  border: 1px solid #aaa;
+  padding: 5px 10px;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favorite-meals .meal-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.favorite-meals .meal-info {
+  margin-right: 20px;
+}
+
+.favorite-meals .buttons {
+  display: flex;
+}
+
+.favorite-meals .button {
+  height: 30px;
+}
+
+.favorite-meals .button-edit {
+  margin-right: 10px;
+}
