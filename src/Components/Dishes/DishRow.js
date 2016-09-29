@@ -36,10 +36,17 @@ class DishRow extends Component {
           </div>
           {this.state.detailsVisible && ingredientsList}
         </td>
-        <td>edit</td>
         <td>
           <div
-            className="button"
+            className="button button-cool"
+            onClick={() => this.props.openEditForm(dish.id)}
+          >
+            edit
+          </div>
+        </td>
+        <td>
+          <div
+            className="button button-warm"
             onClick={() => this.props.deleteDish(dish.id)}
           >
             delete
@@ -53,6 +60,7 @@ class DishRow extends Component {
 DishRow.propTypes = {
   dish: PropTypes.object,
   ingredients: PropTypes.arrayOf(PropTypes.object),
+  openEditForm: PropTypes.func.isRequired,
   deleteDish: PropTypes.func.isRequired,
 };
 

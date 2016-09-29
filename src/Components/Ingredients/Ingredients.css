@@ -20,18 +20,6 @@ table.ingredients > tbody > tr > td {
 .ingredient-name-text {
   font-weight: bold;
 }
-.button {
-  border: 1px solid #76c33c;
-  color: #76c33c;;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.button:hover {
-  background-color: #efe;
-}
 .toggle-form-button {
   margin: 5px;
   width: 150px;
@@ -56,11 +44,10 @@ table.ingredients > tbody > tr > td {
 form {
   display: flex;
 }
-.form-field {
+.ingredients .form-field {
   height: 24px;
   font-size: 16px;
-  margin: 10px;
 }
-input {
+.ingredients input {
   width: 300px;
 }

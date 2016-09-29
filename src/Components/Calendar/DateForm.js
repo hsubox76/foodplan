@@ -85,7 +85,7 @@ class DateForm extends Component {
           <div className="form-text">days</div>
         </div>
         <div
-          className="button date-ok-button"
+          className="button button-cool date-ok-button"
           onClick={() => this.onOkClick()}
         >
           OK

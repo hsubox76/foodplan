@@ -2,23 +2,43 @@ import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
 import ItemSelect from '../Shared/ItemSelect';
 
-class AddDishForm extends Component {
-  constructor() {
-    super();
-    this.onNameChange = this.onNameChange.bind(this);
+class DishForm extends Component {
+  constructor(props) {
+    super(props);
     this.onIngredientNameSelect = this.onIngredientNameSelect.bind(this);
-    this.state = {
-      name: '',
-      ingredients: [{ quantity: 0 }],
-      ownIngredient: false,
-      error: null
+    if (props.dish) {
+      this.state = {
+        name: props.dish.name,
+        ingredients: _.map(props.dish.ingredientQuantities, iQ =>
+          { return _.extend({}, props.ingredients[iQ.id], {
+            quantity: iQ.quantity
+          });
+        }),
+        servings: props.dish.servings,
+        ownIngredient: false,
+        error: null
+      }
+    } else {
+      this.state = {
+        name: '',
+        ingredients: [{ quantity: 0 }],
+        servings: 1,
+        ownIngredient: false,
+        error: null
+      }
     }
   }
   onOwnIngredientClick() {
-    this.setState({ ownIngredient: !this.state.ownIngredient })
+    this.setState({
+      servings: this.state.ownIngredient ? this.state.servings : 1,
+      ownIngredient: !this.state.ownIngredient
+    });
   }
-  onNameChange(e) {
-    this.setState({name: e.target.value});
+  onNameChange(name) {
+    this.setState({name: name});
+  }
+  onServingsChange(servings) {
+    this.setState({servings: servings});
   }
   addIngredientField() {
     this.setState({
@@ -37,6 +57,7 @@ class AddDishForm extends Component {
         } else {
           this.props.addDish({
             name: this.state.name,
+            servings: this.state.servings,
             ingredientQuantities: _.map(this.state.ingredients, ingredient => ({
               id: ingredient.id,
               quantity: ingredient.quantity
@@ -76,7 +97,7 @@ class AddDishForm extends Component {
     const ingredientRows = _.map(this.state.ingredients, (ingredient, index) =>
       <div className="add-dish-form-row" key={index}>
         <div className="row-text ingredient-number">
-          ingredient {index + 1}
+          # {index + 1}
         </div>
         <div className="row-text">
           <ItemSelect
@@ -91,6 +112,7 @@ class AddDishForm extends Component {
             className="ingredient-quantity"
             placeholder="qty"
             type="number"
+            value={ingredient.quantity}
             onChange={(e) => this.onIngredientQuantityChange(e.target.value, index)}
           />
         </div>
@@ -105,8 +127,10 @@ class AddDishForm extends Component {
             type="text"
             placeholder="name of dish"
             value={this.state.name}
-            onChange={this.onNameChange}
+            onChange={e => this.onNameChange(e.target.value)}
           />
+        </div>
+        <div className="add-dish-form-row own-ingredient-row">
           <div className="own-ingredient">
             <span
               className={"fa " + (this.state.ownIngredient ? "fa-check-square" : "fa-square")}
@@ -117,10 +141,23 @@ class AddDishForm extends Component {
             </span>
           </div>
         </div>
+        <div className="add-dish-form-row">
+          <div className="row-text">This will make</div>
+          <input
+            type="number"
+            className="num-servings-input"
+            value={this.state.servings}
+            onChange={e => this.onServingsChange(e.target.value)}
+          />
+          <div className="row-text">servings</div>
+        </div>
+        <div className="add-dish-form-row section-title">
+          Ingredients:
+        </div>
         {ingredientRows}
         <div className="add-dish-form-row">
           <div
-            className="button"
+            className="button button-cool"
             onClick={() => this.addIngredientField()}
           >
             add another ingredient
@@ -131,12 +168,12 @@ class AddDishForm extends Component {
         <div className="add-dish-form-row">
           <div
             onClick={() => this.formatAndAddDish()}
-            className="form-field button new-dish-submit">
-              Add It
+            className="form-field button button-cool new-dish-submit">
+              Save This Dish
           </div>
           <div
             onClick={this.props.hideForm}
-            className="form-field button new-dish-cancel">
+            className="form-field button button-neutral new-dish-cancel">
               Cancel
           </div>
         </div>
@@ -145,11 +182,12 @@ class AddDishForm extends Component {
   }
 }
 
-AddDishForm.propTypes = {
+DishForm.propTypes = {
   addDish: PropTypes.func.isRequired,
   addDishAsOwnIngredient: PropTypes.func.isRequired,
   hideForm: PropTypes.func.isRequired,
+  dish: PropTypes.object,
   ingredients: PropTypes.object,
 };
 
-export default AddDishForm;
+export default DishForm;

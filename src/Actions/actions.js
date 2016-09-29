@@ -124,6 +124,7 @@ export function addDish(dish) {
     newDishRef.set({
       id: newDishRef.key,
       name: dish.name,
+      servings: dish.servings,
       ingredientQuantities: dish.ingredientQuantities
     });
   }
@@ -143,6 +144,7 @@ export function addDishAsOwnIngredient(dishName) {
     newDishRef.set({
       id: newDishRef.key,
       name: dishName,
+      servings: 1,
       ingredientQuantities: [{ id: newIngredientRef.key, quantity: 1 }]
     });
   }

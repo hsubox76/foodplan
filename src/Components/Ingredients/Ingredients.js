@@ -7,8 +7,7 @@ import AddIngredientForm from './AddIngredientForm';
 import {
   addIngredient,
   editIngredient,
-  deleteIngredient,
-  writeToFirebasePlanWith
+  deleteIngredient
 } from '../../Actions/actions';
 
 class Ingredients extends Component {
@@ -39,7 +38,7 @@ class Ingredients extends Component {
     });
     const addIngredientButton = (
       <div
-        className="button toggle-form-button"
+        className="button button-cool toggle-form-button"
         onClick={this.openIngredientForm}
       >
         add an ingredient
@@ -48,11 +47,6 @@ class Ingredients extends Component {
     return (
       <div>
         <h1>Ingredients</h1>
-        <div onClick={() =>
-          this.props.writeIngredientsToFirebase(this.props.ingredients)}
-        >
-          write ingredients to firebase
-        </div>
         {this.state.addFormVisible
           ? <AddIngredientForm
               addIngredient={this.props.addIngredient}
@@ -84,9 +78,7 @@ function mapDispatchToActions(dispatch) {
   return {
     addIngredient: (name, unit, id) => dispatch(addIngredient(name, unit, id)),
     editIngredient: (name, unit, id) => dispatch(editIngredient(name, unit, id)),
-    deleteIngredient: (id) => dispatch(deleteIngredient(id)),
-    writeIngredientsToFirebase: (ingredients) =>
-      dispatch(writeToFirebasePlanWith('ingredients', ingredients))
+    deleteIngredient: (id) => dispatch(deleteIngredient(id))
   }
 }
 

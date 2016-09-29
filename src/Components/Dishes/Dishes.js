@@ -3,26 +3,54 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 import './Dishes.css';
 import DishRow from './DishRow';
-import AddDishForm from './AddDishForm';
+import DishForm from './DishForm';
 import { addDish, addDishAsOwnIngredient, deleteDish } from '../../Actions/actions';
 
 class Dishes extends Component {
   constructor() {
     super();
     this.state = {
-      addFormVisible: false
+      addFormVisible: false,
+      dishBeingEditedId: null
     }
-    this.openDishForm = this.openDishForm.bind(this);
-    this.closeDishForm = this.closeDishForm.bind(this);
+    this.openAddDishForm = this.openAddDishForm.bind(this);
+    this.closeAddDishForm = this.closeAddDishForm.bind(this);
+    this.openEditDishForm = this.openEditDishForm.bind(this);
+    this.closeEditDishForm = this.closeEditDishForm.bind(this);
   }
-  openDishForm() {
-    this.setState({addFormVisible: true});
+  openAddDishForm() {
+    this.setState({
+      addFormVisible: true,
+      dishBeingEditedId: null
+    });
   }
-  closeDishForm() {
+  closeAddDishForm() {
     this.setState({addFormVisible: false});
+  }
+  openEditDishForm(dishId) {
+    this.setState({
+      addFormVisible: false,
+      dishBeingEditedId: dishId
+    })
+  }
+  closeEditDishForm() {
+    this.setState({dishBeingEditedId: null})
   }
   render() {
     const dishRows = _.map(this.props.dishes, dish => {
+      if (dish.id === this.state.dishBeingEditedId) {
+        return (
+          <tr key={dish.id}><td colSpan={3}>
+          <DishForm
+              hideForm={this.closeEditDishForm}
+              addDish={this.props.addDish}
+              addDishAsOwnIngredient={this.props.addDishAsOwnIngredient}
+              ingredients={this.props.ingredients}
+              dish={dish}
+            />
+          </td></tr>
+        );
+      }
       const ingredients = _.map(dish.ingredientQuantities,
         (ingredientQuantity) => {
           return _.extend({}, this.props.ingredients[ingredientQuantity.id], {quantity: ingredientQuantity.quantity})
@@ -33,14 +61,15 @@ class Dishes extends Component {
           key={dish.id}
           dish={dish}
           ingredients={ingredients}
+          openEditForm={this.openEditDishForm}
           deleteDish={this.props.deleteDish}
         />
       );
     });
     const addDishButton = (
       <div
-        className="button add-dish-button"
-        onClick={this.openDishForm}
+        className="button button-cool add-dish-button"
+        onClick={this.openAddDishForm}
       >
         add a dish
       </div>
@@ -49,8 +78,8 @@ class Dishes extends Component {
       <div>
         <h1>Dishes</h1>
         {this.state.addFormVisible
-          ? <AddDishForm
-              hideForm={this.closeDishForm}
+          ? <DishForm
+              hideForm={this.closeAddDishForm}
               addDish={this.props.addDish}
               addDishAsOwnIngredient={this.props.addDishAsOwnIngredient}
               ingredients={this.props.ingredients}

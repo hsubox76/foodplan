@@ -1,22 +1,24 @@
 .item-select {
-  border: 1px solid #ccc;
   cursor: pointer;
 }
 
 .selected-item {
+  border: 1px solid #ccc;
   position: relative;
-  margin: 0 5px;
+  padding: 0 5px;
   top: 50%;
+  height: 100%;
   transform: translateY(-50%);
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .option-box {
   position: relative;
-  width: calc(100% + 8px);
-  top: -3px;
-  left: -3px;
+  width: 100%;
+  left: 0;
+  top: 0;
   border: 1px solid #ccc;
   background-color: #fff;
   z-index: 100;

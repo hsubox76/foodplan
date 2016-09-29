@@ -48,7 +48,7 @@ class IngredientRow extends Component {
     const okButton = (
       <td>
         <div
-          className="button edit-button"
+          className="button button-cool edit-button"
           onClick={this.submitEditedIngredient}
         >
           OK
@@ -58,7 +58,7 @@ class IngredientRow extends Component {
     const editButton = (
       <td>
         <div
-          className="button edit-button"
+          className="button button-cool edit-button"
           onClick={() => this.setEditMode(true)}
         >
           edit
@@ -68,7 +68,7 @@ class IngredientRow extends Component {
     const deleteButton = (
       <td>
         <div
-          className="button delete-button"
+          className="button button-warm delete-button"
           onClick={() => this.props.deleteIngredient(ingredient.id)}
         >
           delete

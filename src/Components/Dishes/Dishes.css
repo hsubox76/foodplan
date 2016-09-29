@@ -8,6 +8,7 @@ table.dishes > tbody > tr > td {
 td.dish-name {
   margin: 10px;
   border: 1px solid #ccc;
+  min-width: 200px;
 }
 td.dish-name > div {
   display: flex;
@@ -47,11 +48,18 @@ td.dish-name > div {
   flex-direction: row;
   margin: 10px 0;
 }
+.add-dish-form-row.section-title {
+  font-weight: 700;
+}
+.add-dish-form-row.own-ingredient-row {
+  margin-top: 0;
+}
 
 .add-dish-form-container .dish-name-field {
-  width: 300px;
-  height: 24px;
+  flex: 0 1 400px;
+  height: 30px;
   font-size: 16px;
+  padding-left: 5px;
 }
 
 .row-text {
@@ -70,13 +78,17 @@ td.dish-name > div {
   width: 50px;
 }
 
-.new-ingredient-submit {
-  width: 100px;
+.new-dish-submit {
+  width: 150px;
+}
+
+.new-dish-cancel {
+  width: 150px;
+  margin-left: 10px;
 }
 
 .own-ingredient {
   display: flex;
-  margin-left: 20px;
   align-items: flex-start;
 }
 
@@ -87,4 +99,10 @@ td.dish-name > div {
 
 .own-ingredient .fa {
   margin-right: 10px;
+}
+
+.num-servings-input {
+  width: 40px;
+  margin: 0 10px;
+  padding-left: 5px;
 }

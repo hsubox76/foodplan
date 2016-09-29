@@ -11,17 +11,17 @@ a, td, tr, div, span, input {
 
 a {
   text-decoration: none;
-}
-
-a:link,
-a:visited,
-a:active {
-  color: #555;
+  color: #fff;
 }
 
 h1 {
   font-size: 24px;
   font-weight: bold;
+}
+
+input {
+  height: 25px;
+  font-size: 16px;
 }
 
 .main-container {
@@ -35,7 +35,7 @@ h1 {
 
 .menu-bar {
   display: flex;
-  background-color: #777;
+  background-color: #e37222;
 }
 
 .menu-bar > div {
@@ -43,11 +43,10 @@ h1 {
   display: block;
   padding: 5px;
   margin: 5px;
-  background-color: #555;
 }
 
 .menu-bar > div:hover {
-  background-color: #333;
+  background-color: #eeaa7b;
 }
 
 .menu-bar a {
@@ -66,8 +65,38 @@ h1 {
 }
 
 .button {
-  border: 1px solid #cdc;
-  padding: 5px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-warm {
+  color: #fff;
+  background-color: #e37222;
+}
+
+.button-warm:hover {
+  background-color: #eeaa7b;
+}
+
+.button-cool {
+  color: #fff;
+  background-color: #07889B;
+}
+
+.button-cool:hover {
+  background-color: #66B9BF;
+}
+
+.button-neutral {
+  color: #fff;
+  background-color: #666;
+}
+
+.button-neutral:hover {
+  background-color: #888;
 }
 
 .calendar-container {
