@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { Router, IndexRoute, Route, browserHistory } from 'react-router'
+import { Router, IndexRoute, IndexRedirect, Route, browserHistory } from 'react-router'
 import store from '../store';
 import Main from './Main';
 import Calendar from './Calendar/Calendar';
@@ -19,7 +19,7 @@ class App extends Component {
       <Provider store={store}>
         <Router history={browserHistory}>
           <Route path="/" component={Main}>
-            <IndexRoute component={Calendar} />
+            <IndexRedirect to="/calendar" />
             <Route path="calendar" component={Calendar}>
               <IndexRoute component={CalendarBox} />
               <Route path="calendar" component={CalendarBox} />

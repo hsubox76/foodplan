@@ -35,9 +35,9 @@ class ShoppingList extends Component {
       });
       return ingredientsList;
     }, {});
-    const ingredientElements = _.map(ingredients, ingredient => {
+    const ingredientElements = _.map(ingredients, (ingredient, index) => {
       return (
-        <div className="ingredient-row">
+        <div className="ingredient-row" key={index}>
           <div className="ingredient-name">{ingredient.name}</div>
           <div className="ingredient-quantity">{Math.round(ingredient.quantity * 100) / 100}</div>
           <div className="ingredient-unit">{ingredient.unit}</div>
