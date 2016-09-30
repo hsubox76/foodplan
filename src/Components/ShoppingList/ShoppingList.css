@@ -1,0 +1,23 @@
+.shopping-list-page {
+  padding: 10px;
+}
+
+.shopping-list-page .ingredient-row {
+  display: flex;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.shopping-list-page .ingredient-name {
+  flex: 1 0 200px;
+}
+
+.shopping-list-page .ingredient-quantity {
+  flex: 0.5 0 100px;
+}
+
+.shopping-list-page .ingredient-unit {
+  flex: 0.5 0 100px;
+}

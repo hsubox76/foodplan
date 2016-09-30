@@ -1,10 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import _ from 'lodash';
 import moment from 'moment';
-import DayBox from '../DayBox/DayBox';
 import DateForm from './DateForm';
 import { setDateRange } from '../../Actions/actions';
+import './Calendar.css';
 
 class Calendar extends Component {
   componentWillMount() {
@@ -14,40 +15,22 @@ class Calendar extends Component {
     }
   }
   render() {
-    if (!this.props.ui.startDate) {
-      return (<div>setting default dates</div>);
-    }
-    const startMoment = moment(this.props.ui.startDate);
-    const dates = _.range(startMoment, moment(startMoment).add(this.props.ui.numDays, 'days'), moment.duration(1, 'day'));
-    const dayBoxes = _.map(dates, date => {
-      const day = this.props.days[moment(date).format('YYYY-MM-DD')]
-        || {
-          id: 'new_' + date,
-          date: moment(date).format('YYYY-MM-DD'),
-          mealIds: {}
-        }
-      return (
-        <DayBox
-          key={day.date}
-          type="calendar"
-          day={day}
-          people={this.props.people}
-          meals={this.props.meals}
-          dishes={this.props.dishes}
-          width={400}
-        />
-      );
-    });
     return (
-      <div>
+      <div className="calendar-page">
         <h1>Calendar</h1>
-        <DateForm
-          startMoment={moment(this.props.ui.startDate, 'YYYY-MM-DD')}
-          numDays={this.props.ui.numDays}
-          onRangeChange={this.props.setDateRange}
-        />
-        <div className="calendar-container">
-          {dayBoxes}
+        {this.props.ui.startDate &&
+          <DateForm
+            startMoment={moment(this.props.ui.startDate, 'YYYY-MM-DD')}
+            numDays={this.props.ui.numDays}
+            onRangeChange={this.props.setDateRange}
+          />
+        }
+        <div className="calendar-page-tabs">
+          <Link className="tab" activeClassName="tab-selected" to="/calendar/calendar">Calendar</Link>
+          <Link className="tab" activeClassName="tab-selected" to="/calendar/list">List</Link>
+        </div>
+        <div className="calendar-child-content">
+          {this.props.children}
         </div>
       </div>
     );

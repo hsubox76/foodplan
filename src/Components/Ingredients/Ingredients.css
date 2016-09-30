@@ -5,19 +5,19 @@ table.ingredients {
 table.ingredients > tbody > tr > td {
   padding: 5px;
 }
-.ingredient-name > div {
+.ingredients-page .ingredient-name > div {
   display: flex;
   justify-content: space-between;
 }
-.ingredient-name {
+.ingredients-page .ingredient-name {
   border: 1px solid #ccc;
   width: 200px;
 }
-.ingredient-unit {
+.ingredients-page .ingredient-unit {
   border: 1px solid #ccc;
   width: 90px;
 }
-.ingredient-name-text {
+.ingredients-page .ingredient-name-text {
   font-weight: bold;
 }
 .toggle-form-button {

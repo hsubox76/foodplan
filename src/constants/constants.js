@@ -1,14 +1,14 @@
 export const MEAL_TYPES = {
   HOME: {
     name: 'home',
-    color: '#4c819a'
+    color: '#07889B'
   },
   PACKED: {
     name: 'pack',
-    color: '#8fd083'
+    color: '#eeaa7b'
   },
   OUTSIDE: {
     name: 'out',
-    color: '#9c819a'
+    color: '#aaa'
   }
 };

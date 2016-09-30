@@ -1,0 +1,25 @@
+.calendar-page-tabs {
+  position: relative;
+  display: flex;
+}
+
+.calendar-page-tabs .tab {
+  position: relative;
+  border: 1px solid #07889B;
+  margin: 0 10px;
+  padding: 5px 10px 0 10px;
+  color: #fff;
+  font-weight: bold;
+  bottom: -1px;
+  z-index: 10;
+  background-color: #66B9BF;
+}
+
+.calendar-page-tabs .tab-selected {
+  border-bottom: 2px solid #66B9BF;
+}
+
+.calendar-child-content {
+  background-color: #66B9BF;
+  border: 1px solid #07889B
+}

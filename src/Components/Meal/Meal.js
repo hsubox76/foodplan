@@ -49,7 +49,7 @@ class Meal extends Component {
       peopleDistribution: _.cloneDeep(meal.peopleDistribution),
       favoriteName: '',
       name: meal.name || null,
-      isFavorite: meal.name ? true : false
+      isFavorite: _.includes(this.props.route.path, 'favoritemeal/') ? true : false
     });
   }
   formatMealFromState() {
