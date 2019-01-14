@@ -1,0 +1,47 @@
+.firebase-docs .tsd-page-title {
+    background-color: #039be5;
+    color: white;
+}
+
+.firebase-docs .tsd-breadcrumb,
+.firebase-docs .tsd-breadcrumb a {
+    color: white;
+}
+
+.firebase-docs .tsd-page-title h1 {
+    font-weight: normal;
+}
+
+.firebase-docs .title {
+    background-image: url(../../assets/images/lockup.png);
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    background-size: 120px;
+    display: inline-block;
+}
+
+.firebase-docs .project-name {
+    color: #333;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 130px;
+}
+
+.firebase-docs dl.tsd-comment-tags dt.tag-example {
+    float: none;
+    text-transform: capitalize;
+    color: #039be5;
+    font-size: 1.1em;
+    padding: 5px;
+    border: none;
+}
+
+.firebase-docs dl.tsd-comment-tags dd.tag-body-example {
+    border: 2px solid #039be5;
+    border-radius: 5px;
+}
+
+.firebase-docs dl.tsd-comment-tags dd.tag-body-example p {
+    margin: 5px;
+}

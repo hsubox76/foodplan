@@ -1,0 +1,2273 @@
+<!doctype html>
+<html class="default firebase-docs no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Auth | JavaScript SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/firebase.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell">
+					<a href="../index.html" class="title">
+						<span class="project-name">JavaScript SDK</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="firebase.html">firebase</a>
+				</li>
+				<li>
+					<a href="firebase.auth.html">auth</a>
+				</li>
+				<li>
+					<a href="firebase.auth.auth.html">Auth</a>
+				</li>
+			</ul>
+			<h1>Auth</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="current tsd-kind-module">
+						<a href="firebase.html">firebase</a>
+						<ul>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.app.html">app</a>
+							</li>
+							<li class="current tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.auth.html">auth</a>
+								<ul>
+									<li class="current tsd-kind-module tsd-parent-kind-module">
+										<a href="firebase.auth.auth.html">Auth</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.database.html">database</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.firestore.html">firestore</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.functions.html">functions</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.messaging.html">messaging</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.storage.html">storage</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#persistence" class="tsd-kind-icon">Persistence</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#app" class="tsd-kind-icon">app</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#currentuser" class="tsd-kind-icon">current<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#languagecode" class="tsd-kind-icon">language<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-property tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#settings" class="tsd-kind-icon">settings</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#applyactioncode" class="tsd-kind-icon">apply<wbr>Action<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#checkactioncode" class="tsd-kind-icon">check<wbr>Action<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#confirmpasswordreset" class="tsd-kind-icon">confirm<wbr>Password<wbr>Reset</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#createuserandretrievedatawithemailandpassword" class="tsd-kind-icon">create<wbr>User<wbr>And<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#createuserwithemailandpassword" class="tsd-kind-icon">create<wbr>User<wbr>With<wbr>Email<wbr>And<wbr>Password</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#fetchprovidersforemail" class="tsd-kind-icon">fetch<wbr>Providers<wbr>For<wbr>Email</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#fetchsigninmethodsforemail" class="tsd-kind-icon">fetch<wbr>Sign<wbr>InMethods<wbr>For<wbr>Email</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#getredirectresult" class="tsd-kind-icon">get<wbr>Redirect<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#issigninwithemaillink" class="tsd-kind-icon">is<wbr>Sign<wbr>InWith<wbr>Email<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#onauthstatechanged" class="tsd-kind-icon">on<wbr>Auth<wbr>State<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#onidtokenchanged" class="tsd-kind-icon">on<wbr>IdToken<wbr>Changed</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#sendpasswordresetemail" class="tsd-kind-icon">send<wbr>Password<wbr>Reset<wbr>Email</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#sendsigninlinktoemail" class="tsd-kind-icon">send<wbr>Sign<wbr>InLink<wbr>ToEmail</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#setpersistence" class="tsd-kind-icon">set<wbr>Persistence</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinandretrievedatawithcredential" class="tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Credential</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinandretrievedatawithcustomtoken" class="tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Custom<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinandretrievedatawithemailandpassword" class="tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinanonymously" class="tsd-kind-icon">sign<wbr>InAnonymously</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinanonymouslyandretrievedata" class="tsd-kind-icon">sign<wbr>InAnonymously<wbr>And<wbr>Retrieve<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithcredential" class="tsd-kind-icon">sign<wbr>InWith<wbr>Credential</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithcustomtoken" class="tsd-kind-icon">sign<wbr>InWith<wbr>Custom<wbr>Token</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithemailandpassword" class="tsd-kind-icon">sign<wbr>InWith<wbr>Email<wbr>And<wbr>Password</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithemaillink" class="tsd-kind-icon">sign<wbr>InWith<wbr>Email<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithphonenumber" class="tsd-kind-icon">sign<wbr>InWith<wbr>Phone<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithpopup" class="tsd-kind-icon">sign<wbr>InWith<wbr>Popup</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signinwithredirect" class="tsd-kind-icon">sign<wbr>InWith<wbr>Redirect</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#signout" class="tsd-kind-icon">sign<wbr>Out</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#updatecurrentuser" class="tsd-kind-icon">update<wbr>Current<wbr>User</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#usedevicelanguage" class="tsd-kind-icon">use<wbr>Device<wbr>Language</a>
+					</li>
+					<li class=" tsd-kind-method tsd-parent-kind-module">
+						<a href="firebase.auth.auth.html#verifypasswordresetcode" class="tsd-kind-icon">verify<wbr>Password<wbr>Reset<wbr>Code</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The Firebase Auth service interface.</p>
+					</div>
+					<p>Do not call this constructor directly. Instead, use
+					<a href="firebase.auth.html"><code>firebase.auth()</code></a>.</p>
+					<p>See
+						<a href="https://firebase.google.com/docs/auth/" class="external">Firebase Authentication</a>
+					for a full guide on how to use the Firebase Auth service.</p>
+				</div>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="firebase.auth.auth.html#persistence" class="tsd-kind-icon">Persistence</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-module"><a href="firebase.auth.auth.html#app" class="tsd-kind-icon">app</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-module"><a href="firebase.auth.auth.html#currentuser" class="tsd-kind-icon">current<wbr>User</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-module"><a href="firebase.auth.auth.html#languagecode" class="tsd-kind-icon">language<wbr>Code</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-module"><a href="firebase.auth.auth.html#settings" class="tsd-kind-icon">settings</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#applyactioncode" class="tsd-kind-icon">apply<wbr>Action<wbr>Code</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#checkactioncode" class="tsd-kind-icon">check<wbr>Action<wbr>Code</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#confirmpasswordreset" class="tsd-kind-icon">confirm<wbr>Password<wbr>Reset</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#createuserandretrievedatawithemailandpassword" class="tsd-kind-icon">create<wbr>User<wbr>And<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#createuserwithemailandpassword" class="tsd-kind-icon">create<wbr>User<wbr>With<wbr>Email<wbr>And<wbr>Password</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#fetchprovidersforemail" class="tsd-kind-icon">fetch<wbr>Providers<wbr>For<wbr>Email</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#fetchsigninmethodsforemail" class="tsd-kind-icon">fetch<wbr>Sign<wbr>InMethods<wbr>For<wbr>Email</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#getredirectresult" class="tsd-kind-icon">get<wbr>Redirect<wbr>Result</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#issigninwithemaillink" class="tsd-kind-icon">is<wbr>Sign<wbr>InWith<wbr>Email<wbr>Link</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#onauthstatechanged" class="tsd-kind-icon">on<wbr>Auth<wbr>State<wbr>Changed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#onidtokenchanged" class="tsd-kind-icon">on<wbr>IdToken<wbr>Changed</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#sendpasswordresetemail" class="tsd-kind-icon">send<wbr>Password<wbr>Reset<wbr>Email</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#sendsigninlinktoemail" class="tsd-kind-icon">send<wbr>Sign<wbr>InLink<wbr>ToEmail</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#setpersistence" class="tsd-kind-icon">set<wbr>Persistence</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinandretrievedatawithcredential" class="tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Credential</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinandretrievedatawithcustomtoken" class="tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Custom<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinandretrievedatawithemailandpassword" class="tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinanonymously" class="tsd-kind-icon">sign<wbr>InAnonymously</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinanonymouslyandretrievedata" class="tsd-kind-icon">sign<wbr>InAnonymously<wbr>And<wbr>Retrieve<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithcredential" class="tsd-kind-icon">sign<wbr>InWith<wbr>Credential</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithcustomtoken" class="tsd-kind-icon">sign<wbr>InWith<wbr>Custom<wbr>Token</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithemailandpassword" class="tsd-kind-icon">sign<wbr>InWith<wbr>Email<wbr>And<wbr>Password</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithemaillink" class="tsd-kind-icon">sign<wbr>InWith<wbr>Email<wbr>Link</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithphonenumber" class="tsd-kind-icon">sign<wbr>InWith<wbr>Phone<wbr>Number</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithpopup" class="tsd-kind-icon">sign<wbr>InWith<wbr>Popup</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signinwithredirect" class="tsd-kind-icon">sign<wbr>InWith<wbr>Redirect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#signout" class="tsd-kind-icon">sign<wbr>Out</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#updatecurrentuser" class="tsd-kind-icon">update<wbr>Current<wbr>User</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#usedevicelanguage" class="tsd-kind-icon">use<wbr>Device<wbr>Language</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-module"><a href="firebase.auth.auth.html#verifypasswordresetcode" class="tsd-kind-icon">verify<wbr>Password<wbr>Reset<wbr>Code</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="persistence" class="tsd-anchor"></a>
+					<h3>Persistence</h3>
+					<div class="tsd-signature tsd-kind-icon">Persistence<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:3514</li>
+							<li>Defined in index.d.ts:3518</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An enumeration of the possible persistence mechanism types.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-module">
+					<a name="app" class="tsd-anchor"></a>
+					<h3>app</h3>
+					<div class="tsd-signature tsd-kind-icon">app<span class="tsd-signature-symbol">:</span> <a href="../interfaces/firebase.app.app.html" class="tsd-signature-type">App</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:1453</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="../interfaces/firebase.app.app.html">app</a> associated with the <code>Auth</code> service
+							instance.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt class="tag-example">example</dt>
+							<dd class="tag-body-example"><pre><code><span class="hljs-keyword">var</span> <span class="hljs-keyword">app</span> = auth.<span class="hljs-keyword">app</span>;</code></pre></dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-module">
+					<a name="currentuser" class="tsd-anchor"></a>
+					<h3>current<wbr>User</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>User<span class="tsd-signature-symbol">:</span> <a href="../interfaces/firebase.user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:1636</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The currently signed-in user (or null).</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-module">
+					<a name="languagecode" class="tsd-anchor"></a>
+					<h3>language<wbr>Code</h3>
+					<div class="tsd-signature tsd-kind-icon">language<wbr>Code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:1788</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The current Auth instance&#39;s language code. This is a readable/writable
+								property. When set to null, the default Firebase Console language setting
+								is applied. The language code will propagate to email action templates
+								(password reset, email verification and email change revocation), SMS
+								templates for phone authentication, reCAPTCHA verifier and OAuth
+								popup/redirect operations provided the specified providers support
+							localization with the language code specified.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-module">
+					<a name="settings" class="tsd-anchor"></a>
+					<h3>settings</h3>
+					<div class="tsd-signature tsd-kind-icon">settings<span class="tsd-signature-symbol">:</span> <a href="../interfaces/firebase.auth.authsettings.html" class="tsd-signature-type">AuthSettings</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:1793</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The current Auth instance&#39;s settings. This is used to edit/read configuration
+							related options like app verification mode for phone authentication.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="applyactioncode" class="tsd-anchor"></a>
+					<h3>apply<wbr>Action<wbr>Code</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">apply<wbr>Action<wbr>Code<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1476</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a verification code sent to the user by email or other out-of-band
+									mechanism.</p>
+								</div>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/expired-action-code</dt>
+									<dd>Thrown if the action code has expired.</dd>
+									<dt>auth/invalid-action-code</dt>
+									<dd>Thrown if the action code is invalid. This can happen if the code is
+									malformed or has already been used.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given action code has been
+									disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the action code. This may
+										have happened if the user was deleted between when the action code was
+									issued and when this method was called.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A verification code sent to the user.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="checkactioncode" class="tsd-anchor"></a>
+					<h3>check<wbr>Action<wbr>Code</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Action<wbr>Code<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firebase.auth.actioncodeinfo.html" class="tsd-signature-type">ActionCodeInfo</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1502</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks a verification code sent to the user by email or other out-of-band
+									mechanism.</p>
+								</div>
+								<p>Returns metadata about the code.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/expired-action-code</dt>
+									<dd>Thrown if the action code has expired.</dd>
+									<dt>auth/invalid-action-code</dt>
+									<dd>Thrown if the action code is invalid. This can happen if the code is
+									malformed or has already been used.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given action code has been
+									disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the action code. This may
+										have happened if the user was deleted between when the action code was
+									issued and when this method was called.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A verification code sent to the user.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firebase.auth.actioncodeinfo.html" class="tsd-signature-type">ActionCodeInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="confirmpasswordreset" class="tsd-anchor"></a>
+					<h3>confirm<wbr>Password<wbr>Reset</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">confirm<wbr>Password<wbr>Reset<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newPassword<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1528</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Completes the password reset process, given a confirmation code and new
+									password.</p>
+								</div>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/expired-action-code</dt>
+									<dd>Thrown if the password reset code has expired.</dd>
+									<dt>auth/invalid-action-code</dt>
+									<dd>Thrown if the password reset code is invalid. This can happen if the
+									code is malformed or has already been used.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given password reset code has
+									been disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the password reset code. This
+										may have happened if the user was deleted between when the code was
+									issued and when this method was called.</dd>
+									<dt>auth/weak-password</dt>
+									<dd>Thrown if the new password is not strong enough.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The confirmation code send via email to the user.</p>
+									</div>
+								</li>
+								<li>
+									<h5>newPassword: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The new password.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="createuserandretrievedatawithemailandpassword" class="tsd-anchor"></a>
+					<h3>create<wbr>User<wbr>And<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>User<wbr>And<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1578</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new user account associated with the specified email address and
+									password and returns any additional user info data or credentials.</p>
+								</div>
+								<p>This method is deprecated. Use
+								<a href="firebase.auth.auth.html#createuserwithemailandpassword">firebase.auth.Auth.createUserWithEmailAndPassword</a> instead.</p>
+								<p>On successful creation of the user account, this user will also be
+								signed in to your application.</p>
+								<p>User account creation can fail if the account already exists or the password
+								is invalid.</p>
+								<p>Note: The email address acts as a unique identifier for the user and
+									enables an email-based password reset.  This function will create
+								a new user account and set the initial user password.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/email-already-in-use</dt>
+									<dd>Thrown if there already exists an account with the given email
+									address.</dd>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if email/password accounts are not enabled. Enable email/password
+									accounts in the Firebase Console, under the Auth tab.</dd>
+									<dt>auth/weak-password</dt>
+									<dd>Thrown if the password is not strong enough.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().createUserAndRetrieveDataWithEmailAndPassword(email, password)
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+      <span class="hljs-comment">// Handle Errors here.</span>
+      <span class="hljs-keyword">var</span> errorCode = error.code;
+      <span class="hljs-keyword">var</span> errorMessage = error.message;
+      <span class="hljs-keyword">if</span> (errorCode == <span class="hljs-string">'auth/weak-password'</span>) {
+        alert(<span class="hljs-string">'The password is too weak.'</span>);
+      } <span class="hljs-keyword">else</span> {
+        alert(errorMessage);
+      }
+      <span class="hljs-built_in">console</span>.log(error);
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user&#39;s email address.</p>
+									</div>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user&#39;s chosen password.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="createuserwithemailandpassword" class="tsd-anchor"></a>
+					<h3>create<wbr>User<wbr>With<wbr>Email<wbr>And<wbr>Password</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>User<wbr>With<wbr>Email<wbr>And<wbr>Password<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1629</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a new user account associated with the specified email address and
+									password.</p>
+								</div>
+								<p>On successful creation of the user account, this user will also be
+								signed in to your application.</p>
+								<p>User account creation can fail if the account already exists or the password
+								is invalid.</p>
+								<p>Note: The email address acts as a unique identifier for the user and
+									enables an email-based password reset.  This function will create
+								a new user account and set the initial user password.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/email-already-in-use</dt>
+									<dd>Thrown if there already exists an account with the given email
+									address.</dd>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if email/password accounts are not enabled. Enable email/password
+									accounts in the Firebase Console, under the Auth tab.</dd>
+									<dt>auth/weak-password</dt>
+									<dd>Thrown if the password is not strong enough.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().createUserWithEmailAndPassword(email, password)
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-comment">// Handle Errors here.</span>
+  <span class="hljs-keyword">var</span> errorCode = error.code;
+  <span class="hljs-keyword">var</span> errorMessage = error.message;
+  <span class="hljs-keyword">if</span> (errorCode == <span class="hljs-string">'auth/weak-password'</span>) {
+    alert(<span class="hljs-string">'The password is too weak.'</span>);
+  } <span class="hljs-keyword">else</span> {
+    alert(errorMessage);
+  }
+  <span class="hljs-built_in">console</span>.log(error);
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user&#39;s email address.</p>
+									</div>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user&#39;s chosen password.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="fetchprovidersforemail" class="tsd-anchor"></a>
+					<h3>fetch<wbr>Providers<wbr>For<wbr>Email</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Providers<wbr>For<wbr>Email<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1651</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the list of provider IDs that can be used to sign in for the given email
+									address. Useful for an &quot;identifier-first&quot; sign-in flow.</p>
+								</div>
+								<p>This method is deprecated. Use
+								<a href="firebase.auth.auth.html#fetchsigninmethodsforemail">firebase.auth.Auth.fetchSignInMethodsForEmail</a> instead.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="fetchsigninmethodsforemail" class="tsd-anchor"></a>
+					<h3>fetch<wbr>Sign<wbr>InMethods<wbr>For<wbr>Email</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Sign<wbr>InMethods<wbr>For<wbr>Email<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1665</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the list of possible sign in methods for the given email address. This
+										is useful to differentiate methods of sign-in for the same provider,
+										eg. <code>EmailAuthProvider</code> which has 2 methods of sign-in, email/password and
+									email/link.</p>
+								</div>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="getredirectresult" class="tsd-anchor"></a>
+					<h3>get<wbr>Redirect<wbr>Result</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Redirect<wbr>Result<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1778</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a UserCredential from the redirect-based sign-in flow.</p>
+								</div>
+								<p>If sign-in succeeded, returns the signed in user. If sign-in was
+									unsuccessful, fails with an error. If no redirect operation was called,
+								returns a UserCredential with a null User.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/account-exists-with-different-credential</dt>
+									<dd>Thrown if there already exists an account with the email address
+										asserted by the credential. Resolve this by calling
+										<a href="firebase.auth.auth.html#fetchprovidersforemail">firebase.auth.Auth.fetchProvidersForEmail</a> with the error.email
+										and then asking the user to sign in using one of the returned providers.
+										Once the user is signed in, the original credential retrieved from the
+										error.credential can be linked to the user with
+										<a href="../interfaces/firebase.user.html#linkwithcredential">firebase.User.linkWithCredential</a> to prevent the user from signing
+										in again to the original provider via popup or redirect. If you are using
+										redirects for sign in, save the credential in session storage and then
+										retrieve on redirect and repopulate the credential using for example
+										<a href="../classes/firebase.auth.googleauthprovider.html#credential">firebase.auth.GoogleAuthProvider.credential</a> depending on the
+									credential provider id and complete the link.</dd>
+									<dt>auth/auth-domain-config-required</dt>
+									<dd>Thrown if authDomain configuration is not provided when calling
+										firebase.initializeApp(). Check Firebase Console for instructions on
+									determining and passing that field.</dd>
+									<dt>auth/credential-already-in-use</dt>
+									<dd>Thrown if the account corresponding to the credential already exists
+										among your users, or is already linked to a Firebase User.
+										For example, this error could be thrown if you are upgrading an anonymous
+										user to a Google user by linking a Google credential to it and the Google
+										credential used is already associated with an existing Firebase Google
+										user.
+										An <code>error.email</code> and <code>error.credential</code>
+										(<a href="../interfaces/firebase.auth.authcredential.html">firebase.auth.AuthCredential</a>) fields are also provided. You can
+										recover from this error by signing in with that credential directly via
+									<a href="firebase.auth.auth.html#signinwithcredential">firebase.auth.Auth.signInWithCredential</a>.</dd>
+									<dt>auth/email-already-in-use</dt>
+									<dd>Thrown if the email corresponding to the credential already exists
+										among your users. When thrown while linking a credential to an existing
+										user, an <code>error.email</code> and <code>error.credential</code>
+										(<a href="../interfaces/firebase.auth.authcredential.html">firebase.auth.AuthCredential</a>) fields are also provided.
+										You have to link the credential to the existing user with that email if
+										you wish to continue signing in with that credential. To do so, call
+										<a href="firebase.auth.auth.html#fetchprovidersforemail">firebase.auth.Auth.fetchProvidersForEmail</a>, sign in to
+										<code>error.email</code> via one of the providers returned and then
+										<a href="../interfaces/firebase.user.html#linkwithcredential">firebase.User.linkWithCredential</a> the original credential to that
+									newly signed in user.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if the type of account corresponding to the credential
+										is not enabled. Enable the account type in the Firebase Console, under
+									the Auth tab.</dd>
+									<dt>auth/operation-not-supported-in-this-environment</dt>
+									<dd>Thrown if this operation is not supported in the environment your
+										application is running on. "location.protocol" must be http or https.
+									</dd>
+									<dt>auth/timeout</dt>
+									<dd>Thrown typically if the app domain is not authorized for OAuth operations
+										for your Firebase project. Edit the list of authorized domains from the
+									Firebase console.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-comment">// First, we perform the signInWithRedirect.</span>
+<span class="hljs-comment">// Creates the provider object.</span>
+<span class="hljs-keyword">var</span> provider = <span class="hljs-keyword">new</span> firebase.auth.FacebookAuthProvider();
+<span class="hljs-comment">// You can add additional scopes to the provider:</span>
+provider.addScope(<span class="hljs-string">'email'</span>);
+provider.addScope(<span class="hljs-string">'user_friends'</span>);
+<span class="hljs-comment">// Sign in with redirect:</span>
+auth.signInWithRedirect(provider)
+<span class="hljs-comment">////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">// The user is redirected to the provider's sign in flow...</span>
+<span class="hljs-comment">////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">// Then redirected back to the app, where we check the redirect result:</span>
+auth.getRedirectResult().then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(result)</span> </span>{
+  <span class="hljs-comment">// The firebase.User instance:</span>
+  <span class="hljs-keyword">var</span> user = result.user;
+  <span class="hljs-comment">// The Facebook firebase.auth.AuthCredential containing the Facebook</span>
+  <span class="hljs-comment">// access token:</span>
+  <span class="hljs-keyword">var</span> credential = result.credential;
+  <span class="hljs-comment">// As this API can be used for sign-in, linking and reauthentication,</span>
+  <span class="hljs-comment">// check the operationType to determine what triggered this redirect</span>
+  <span class="hljs-comment">// operation.</span>
+  <span class="hljs-keyword">var</span> operationType = result.operationType;
+}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  <span class="hljs-comment">// The provider's account email, can be used in case of</span>
+  <span class="hljs-comment">// auth/account-exists-with-different-credential to fetch the providers</span>
+  <span class="hljs-comment">// linked to the email:</span>
+  <span class="hljs-keyword">var</span> email = error.email;
+  <span class="hljs-comment">// The provider's credential:</span>
+  <span class="hljs-keyword">var</span> credential = error.credential;
+  <span class="hljs-comment">// In case of auth/account-exists-with-different-credential error,</span>
+  <span class="hljs-comment">// you can fetch the providers using this:</span>
+  <span class="hljs-keyword">if</span> (error.code === <span class="hljs-string">'auth/account-exists-with-different-credential'</span>) {
+    auth.fetchProvidersForEmail(email).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(providers)</span> </span>{
+      <span class="hljs-comment">// The returned 'providers' is a list of the available providers</span>
+      <span class="hljs-comment">// linked to the email address. Please refer to the guide for a more</span>
+      <span class="hljs-comment">// complete explanation on how to recover from this error.</span>
+    });
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="issigninwithemaillink" class="tsd-anchor"></a>
+					<h3>is<wbr>Sign<wbr>InWith<wbr>Email<wbr>Link</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Sign<wbr>InWith<wbr>Email<wbr>Link<span class="tsd-signature-symbol">(</span>emailLink<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1670</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if an incoming link is a sign-in with email link.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>emailLink: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="onauthstatechanged" class="tsd-anchor"></a>
+					<h3>on<wbr>Auth<wbr>State<wbr>Changed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Auth<wbr>State<wbr>Changed<span class="tsd-signature-symbol">(</span>nextOrObserver<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.observer.html" class="tsd-signature-type">Observer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span>, error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, completed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">firebase.Unsubscribe</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">firebase.Unsubscribe</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1813</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds an observer for changes to the user&#39;s sign-in state.</p>
+								</div>
+								<p>Prior to 4.0.0, this triggered the observer when users were signed in,
+									signed out, or when the user&#39;s ID token changed in situations such as token
+									expiry or password change. After 4.0.0, the observer is only triggered
+								on sign-in or sign-out.</p>
+								<p>To keep the old behavior, see <a href="firebase.auth.auth.html#onidtokenchanged">firebase.auth.Auth.onIdTokenChanged</a>.</p>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().onAuthStateChanged(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(user)</span> </span>{
+  <span class="hljs-keyword">if</span> (user) {
+    <span class="hljs-comment">// User is signed in.</span>
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nextOrObserver: <a href="../interfaces/firebase.observer.html" class="tsd-signature-type">Observer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> error: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.error.html" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <a href="../interfaces/firebase.auth.error.html" class="tsd-signature-type">Error</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> completed: <span class="tsd-signature-type">firebase.Unsubscribe</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">firebase.Unsubscribe</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="onidtokenchanged" class="tsd-anchor"></a>
+					<h3>on<wbr>IdToken<wbr>Changed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>IdToken<wbr>Changed<span class="tsd-signature-symbol">(</span>nextOrObserver<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.observer.html" class="tsd-signature-type">Observer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span>, error<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span>, completed<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">firebase.Unsubscribe</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">firebase.Unsubscribe</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1840</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds an observer for changes to the signed-in user&#39;s ID token, which includes
+										sign-in, sign-out, and token refresh events. This method has the same
+									behavior as <a href="firebase.auth.auth.html#onauthstatechanged">firebase.auth.Auth.onAuthStateChanged</a> had prior to 4.0.0.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().onIdTokenChanged(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(user)</span></span> {
+  <span class="hljs-keyword">if</span> (user) {
+    // User is signed <span class="hljs-keyword">in</span> <span class="hljs-keyword">or</span> token was refreshed.
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>nextOrObserver: <a href="../interfaces/firebase.observer.html" class="tsd-signature-type">Observer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> error: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional A function
+										triggered on auth error.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.error.html" class="tsd-signature-type">Error</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <a href="../interfaces/firebase.auth.error.html" class="tsd-signature-type">Error</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> completed: <span class="tsd-signature-type">firebase.Unsubscribe</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optional A function triggered when the
+										observer is removed.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">firebase.Unsubscribe</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="sendpasswordresetemail" class="tsd-anchor"></a>
+					<h3>send<wbr>Password<wbr>Reset<wbr>Email</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Password<wbr>Reset<wbr>Email<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, actionCodeSettings<span class="tsd-signature-symbol">?: </span><a href="firebase.auth.html#actioncodesettings" class="tsd-signature-type">ActionCodeSettings</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1989</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends a password reset email to the given email address.</p>
+								</div>
+								<p>To complete the password reset, call
+									<a href="firebase.auth.auth.html#confirmpasswordreset">firebase.auth.Auth.confirmPasswordReset</a> with the code supplied in the
+								email sent to the user, along with the new password specified by the user.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/missing-android-pkg-name</dt>
+									<dd>An Android package name must be provided if the Android app is required
+									to be installed.</dd>
+									<dt>auth/missing-continue-uri</dt>
+									<dd>A continue URL must be provided in the request.</dd>
+									<dt>auth/missing-ios-bundle-id</dt>
+									<dd>An iOS Bundle ID must be provided if an App Store ID is provided.</dd>
+									<dt>auth/invalid-continue-uri</dt>
+									<dd>The continue URL provided in the request is invalid.</dd>
+									<dt>auth/unauthorized-continue-uri</dt>
+									<dd>The domain of the continue URL is not whitelisted. Whitelist
+									the domain in the Firebase console.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the email address.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-keyword">var</span> actionCodeSettings = {
+  url: <span class="hljs-string">'https://www.example.com/?email=user@example.com'</span>,
+  iOS: {
+    bundleId: <span class="hljs-string">'com.example.ios'</span>
+  },
+  android: {
+    packageName: <span class="hljs-string">'com.example.android'</span>,
+    installApp: <span class="hljs-keyword">true</span>,
+    minimumVersion: <span class="hljs-string">'12'</span>
+  },
+  handleCodeInApp: <span class="hljs-keyword">true</span>
+};
+firebase.auth().sendPasswordResetEmail(
+    <span class="hljs-string">'user@example.com'</span>, actionCodeSettings)
+    .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// Password reset email sent.</span>
+    })
+    .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+      <span class="hljs-comment">// Error occurred. Inspect error.code.</span>
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The email address with the password to be reset.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> actionCodeSettings: <a href="firebase.auth.html#actioncodesettings" class="tsd-signature-type">ActionCodeSettings</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The action
+											code settings. If specified, the state/continue URL will be set as the
+											&quot;continueUrl&quot; parameter in the password reset link. The default password
+											reset landing page will use this to display a link to go back to the app
+											if it is installed.
+											If the actionCodeSettings is not specified, no URL is appended to the
+											action URL.
+											The state URL provided must belong to a domain that is whitelisted by the
+											developer in the console. Otherwise an error will be thrown.
+											Mobile app redirects will only be applicable if the developer configures
+											and accepts the Firebase Dynamic Links terms of condition.
+											The Android package name and iOS bundle ID will be respected only if they
+										are configured in the same Firebase Auth project used.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="sendsigninlinktoemail" class="tsd-anchor"></a>
+					<h3>send<wbr>Sign<wbr>InLink<wbr>ToEmail</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Sign<wbr>InLink<wbr>ToEmail<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, actionCodeSettings<span class="tsd-signature-symbol">: </span><a href="firebase.auth.html#actioncodesettings" class="tsd-signature-type">ActionCodeSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:1918</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sends a sign-in email link to the user with the specified email.</p>
+								</div>
+								<p>The sign-in operation has to always be completed in the app unlike other out
+									of band email actions (password reset and email verifications). This is
+									because, at the end of the flow, the user is expected to be signed in and
+								their Auth state persisted within the app.</p>
+								<p>To complete sign in with the email link, call
+									<a href="firebase.auth.auth.html#signinwithemaillink">firebase.auth.Auth.signInWithEmailLink</a> with the email address and
+								the email link supplied in the email sent to the user.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/argument-error</dt>
+									<dd>Thrown if handleCodeInApp is false.</dd>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/missing-android-pkg-name</dt>
+									<dd>An Android package name must be provided if the Android app is required
+									to be installed.</dd>
+									<dt>auth/missing-continue-uri</dt>
+									<dd>A continue URL must be provided in the request.</dd>
+									<dt>auth/missing-ios-bundle-id</dt>
+									<dd>An iOS Bundle ID must be provided if an App Store ID is provided.</dd>
+									<dt>auth/invalid-continue-uri</dt>
+									<dd>The continue URL provided in the request is invalid.</dd>
+									<dt>auth/unauthorized-continue-uri</dt>
+									<dd>The domain of the continue URL is not whitelisted. Whitelist
+									the domain in the Firebase console.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-keyword">var</span> actionCodeSettings = {
+  <span class="hljs-comment">// The URL to redirect to for sign-in completion. This is also the deep</span>
+  <span class="hljs-comment">// link for mobile redirects. The domain (www.example.com) for this URL</span>
+  <span class="hljs-comment">// must be whitelisted in the Firebase Console.</span>
+  url: <span class="hljs-string">'https://www.example.com/finishSignUp?cartId=1234'</span>,
+  iOS: {
+    bundleId: <span class="hljs-string">'com.example.ios'</span>
+  },
+  android: {
+    packageName: <span class="hljs-string">'com.example.android'</span>,
+    installApp: <span class="hljs-keyword">true</span>,
+    minimumVersion: <span class="hljs-string">'12'</span>
+  },
+  <span class="hljs-comment">// This must be true.</span>
+  handleCodeInApp: <span class="hljs-keyword">true</span>
+};
+firebase.auth().sendSignInLinkToEmail(<span class="hljs-string">'user@example.com'</span>, actionCodeSettings)
+    .then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-comment">// The link was successfully sent. Inform the user. Save the email</span>
+      <span class="hljs-comment">// locally so you don't need to ask the user for it again if they open</span>
+      <span class="hljs-comment">// the link on the same device.</span>
+    })
+    .<span class="hljs-keyword">catch</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+      <span class="hljs-comment">// Some error occurred, you can inspect the code: error.code</span>
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The email account to sign in with.</p>
+									</div>
+								</li>
+								<li>
+									<h5>actionCodeSettings: <a href="firebase.auth.html#actioncodesettings" class="tsd-signature-type">ActionCodeSettings</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The action
+											code settings. The action code settings which provides Firebase with
+											instructions on how to construct the email link. This includes the
+											sign in completion URL or the deep link for mobile redirects, the mobile
+											apps to use when the sign-in link is opened on an Android or iOS device.
+											Mobile app redirects will only be applicable if the developer configures
+											and accepts the Firebase Dynamic Links terms of condition.
+											The Android package name and iOS bundle ID will be respected only if they
+										are configured in the same Firebase Auth project used.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="setpersistence" class="tsd-anchor"></a>
+					<h3>set<wbr>Persistence</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Persistence<span class="tsd-signature-symbol">(</span>persistence<span class="tsd-signature-symbol">: </span><a href="firebase.auth.auth.html#persistence" class="tsd-signature-type">Persistence</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2031</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Changes the current type of persistence on the current Auth instance for the
+										currently saved Auth session and applies this type of persistence for
+										future sign-in requests, including sign-in with redirect requests. This will
+										return a promise that will resolve once the state finishes copying from one
+										type of storage to the other.
+										Calling a sign-in method after changing persistence will wait for that
+									persistence change to complete before applying it on the new Auth state.</p>
+								</div>
+								<p>This makes it easy for a user signing in to specify whether their session
+									should be remembered or not. It also makes it easier to never persist the
+									Auth state for applications that are shared by other users or have sensitive
+								data.</p>
+								<p>The default for web browser apps and React Native apps is &#39;local&#39; (provided
+									the browser supports this mechanism) whereas it is &#39;none&#39; for Node.js backend
+								apps.</p>
+								<h4>Error Codes (thrown synchronously)</h4>
+								<dl>
+									<dt>auth/invalid-persistence-type</dt>
+									<dd>Thrown if the specified persistence type is invalid.</dd>
+									<dt>auth/unsupported-persistence-type</dt>
+									<dd>Thrown if the current environment does not support the specified
+									persistence type.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-selector-tag">firebase</span><span class="hljs-selector-class">.auth</span>()<span class="hljs-selector-class">.setPersistence</span>(firebase.auth.Auth.Persistence.SESSION)
+    <span class="hljs-selector-class">.then</span>(function() {
+  <span class="hljs-comment">// Existing and future Auth states are now persisted in the current</span>
+  <span class="hljs-comment">// session only. Closing the window would clear any existing state even if</span>
+  <span class="hljs-comment">// a user forgets to sign out.</span>
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>persistence: <a href="firebase.auth.auth.html#persistence" class="tsd-signature-type">Persistence</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinandretrievedatawithcredential" class="tsd-anchor"></a>
+					<h3>sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Credential</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Credential<span class="tsd-signature-symbol">(</span>credential<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.authcredential.html" class="tsd-signature-type">AuthCredential</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2083</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in with the given credentials, and returns any available
+									additional user information, such as user name.</p>
+								</div>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/account-exists-with-different-credential</dt>
+									<dd>Thrown if there already exists an account with the email address
+										asserted by the credential. Resolve this by calling
+										<a href="firebase.auth.auth.html#fetchprovidersforemail">firebase.auth.Auth.fetchProvidersForEmail</a> and then asking the
+										user to sign in using one of the returned providers. Once the user is
+										signed in, the original credential can be linked to the user with
+									<a href="../interfaces/firebase.user.html#linkwithcredential">firebase.User.linkWithCredential</a>.</dd>
+									<dt>auth/invalid-credential</dt>
+									<dd>Thrown if the credential is malformed or has expired.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if the type of account corresponding to the credential
+										is not enabled. Enable the account type in the Firebase Console, under
+									the Auth tab.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given credential has been
+									disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if signing in with a credential from
+										<a href="../classes/firebase.auth.emailauthprovider.html#credential">firebase.auth.EmailAuthProvider.credential</a> and there is no user
+									corresponding to the given email. </dd>
+									<dt>auth/wrong-password</dt>
+									<dd>Thrown if signing in with a credential from
+										<a href="../classes/firebase.auth.emailauthprovider.html#credential">firebase.auth.EmailAuthProvider.credential</a> and the password is
+										invalid for the given email, or if the account corresponding to the email
+									does not have a password set.</dd>
+									<dt>auth/invalid-verification-code</dt>
+									<dd>Thrown if the credential is a
+										<a href="../classes/firebase.auth.phoneauthprovider.html#credential">firebase.auth.PhoneAuthProvider.credential</a> and the verification
+									code of the credential is not valid.</dd>
+									<dt>auth/invalid-verification-id</dt>
+									<dd>Thrown if the credential is a
+										<a href="../classes/firebase.auth.phoneauthprovider.html#credential">firebase.auth.PhoneAuthProvider.credential</a>  and the verification
+									ID of the credential is not valid.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInAndRetrieveDataWithCredential(credential)
+    .<span class="hljs-keyword">then</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(userCredential)</span></span> {
+      console.<span class="hljs-built_in">log</span>(userCredential.additionalUserInfo.username);
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>credential: <a href="../interfaces/firebase.auth.authcredential.html" class="tsd-signature-type">AuthCredential</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The auth credential.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinandretrievedatawithcustomtoken" class="tsd-anchor"></a>
+					<h3>sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Custom<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Custom<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2291</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Signs in a user asynchronously using a custom token and returns any
+									additional user info data or credentials.</p>
+								</div>
+								<p>This method is deprecated. Use
+								<a href="firebase.auth.auth.html#signinwithcustomtoken">firebase.auth.Auth.signInWithCustomToken</a> instead.</p>
+								<p>Custom tokens are used to integrate Firebase Auth with existing auth systems,
+								and must be generated by the auth backend.</p>
+								<p>Fails with an error if the token is invalid, expired, or not accepted by the
+								Firebase Auth service.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/custom-token-mismatch</dt>
+									<dd>Thrown if the custom token is for a different Firebase App.</dd>
+									<dt>auth/invalid-custom-token</dt>
+									<dd>Thrown if the custom token format is incorrect.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInAndRetrieveDataWithCustomToken(<span class="hljs-built_in">token</span>)
+    .catch(function(<span class="hljs-built_in">error</span>) {
+      <span class="hljs-comment">// Handle Errors here.</span>
+      var errorCode = <span class="hljs-built_in">error</span>.<span class="hljs-built_in">code</span>;
+      var errorMessage = <span class="hljs-built_in">error</span>.message;
+      <span class="hljs-keyword">if</span> (errorCode === 'auth/invalid-custom-<span class="hljs-built_in">token</span>') {
+        alert('The <span class="hljs-built_in">token</span> you provided is <span class="hljs-keyword">not</span> valid.');
+      } <span class="hljs-keyword">else</span> {
+        console.<span class="hljs-built_in">error</span>(<span class="hljs-built_in">error</span>);
+      }
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The custom token to sign in with.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinandretrievedatawithemailandpassword" class="tsd-anchor"></a>
+					<h3>sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InAnd<wbr>Retrieve<wbr>Data<wbr>With<wbr>Email<wbr>And<wbr>Password<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2392</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in using an email and password and returns any additional
+									user info data or credentials.</p>
+								</div>
+								<p>This method is deprecated. Use
+								<a href="firebase.auth.auth.html#signinwithemailandpassword">firebase.auth.Auth.signInWithEmailAndPassword</a> instead.</p>
+								<p>Fails with an error if the email address and password do not match.</p>
+								<p>Note: The user&#39;s password is NOT the password used to access the user&#39;s email
+									account. The email address serves as a unique identifier for the user, and
+								the password is used to access the user&#39;s account in your Firebase project.</p>
+								<p>See also:
+								<a href="firebase.auth.auth.html#createuserandretrievedatawithemailandpassword">firebase.auth.Auth.createUserAndRetrieveDataWithEmailAndPassword</a>.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given email has been
+									disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the given email.</dd>
+									<dt>auth/wrong-password</dt>
+									<dd>Thrown if the password is invalid for the given email, or the account
+									corresponding to the email does not have a password set.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInAndRetrieveDataWithEmailAndPassword(email, password)
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+      <span class="hljs-comment">// Handle Errors here.</span>
+      <span class="hljs-keyword">var</span> errorCode = error.code;
+      <span class="hljs-keyword">var</span> errorMessage = error.message;
+      <span class="hljs-keyword">if</span> (errorCode === <span class="hljs-string">'auth/wrong-password'</span>) {
+        alert(<span class="hljs-string">'Wrong password.'</span>);
+      } <span class="hljs-keyword">else</span> {
+        alert(errorMessage);
+      }
+      <span class="hljs-built_in">console</span>.log(error);
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The users email address.</p>
+									</div>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The users password.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinanonymously" class="tsd-anchor"></a>
+					<h3>sign<wbr>InAnonymously</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InAnonymously<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2115</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in as an anonymous user.</p>
+								</div>
+								<p>If there is already an anonymous user signed in, that user will be returned;
+								otherwise, a new anonymous user identity will be created and returned.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if anonymous accounts are not enabled. Enable anonymous accounts
+									in the Firebase Console, under the Auth tab.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInAnonymously().<span class="hljs-built_in">catch</span>(function(<span class="hljs-built_in">error</span>) {
+  // Handle Errors here.
+  <span class="hljs-built_in">var</span> errorCode = <span class="hljs-built_in">error</span>.code;
+  <span class="hljs-built_in">var</span> errorMessage = <span class="hljs-built_in">error</span>.message;
+
+  <span class="hljs-keyword">if</span> (errorCode === 'auth/operation-<span class="hljs-keyword">not</span>-allowed') {
+    alert('You must enable Anonymous auth <span class="hljs-keyword">in</span> the Firebase Console.');
+  } <span class="hljs-keyword">else</span> {
+    console.<span class="hljs-built_in">error</span>(<span class="hljs-built_in">error</span>);
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinanonymouslyandretrievedata" class="tsd-anchor"></a>
+					<h3>sign<wbr>InAnonymously<wbr>And<wbr>Retrieve<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InAnonymously<wbr>And<wbr>Retrieve<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2150</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Signs in a user anonymously and returns any additional user info data or
+									credentials.</p>
+								</div>
+								<p>This method is deprecated. Use
+								<a href="firebase.auth.auth.html#signinanonymously">firebase.auth.Auth.signInAnonymously</a> instead.</p>
+								<p>If there is already an anonymous user signed in, that user with
+									additional date will be returned; otherwise, a new anonymous user
+								identity will be created and returned.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if anonymous accounts are not enabled. Enable anonymous accounts
+									in the Firebase Console, under the Auth tab.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInAnonymouslyAndRetrieveData().<span class="hljs-built_in">catch</span>(function(<span class="hljs-built_in">error</span>) {
+  // Handle Errors here.
+  <span class="hljs-built_in">var</span> errorCode = <span class="hljs-built_in">error</span>.code;
+  <span class="hljs-built_in">var</span> errorMessage = <span class="hljs-built_in">error</span>.message;
+
+  <span class="hljs-keyword">if</span> (errorCode === 'auth/operation-<span class="hljs-keyword">not</span>-allowed') {
+    alert('You must enable Anonymous auth <span class="hljs-keyword">in</span> the Firebase Console.');
+  } <span class="hljs-keyword">else</span> {
+    console.<span class="hljs-built_in">error</span>(<span class="hljs-built_in">error</span>);
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithcredential" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Credential</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Credential<span class="tsd-signature-symbol">(</span>credential<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.authcredential.html" class="tsd-signature-type">AuthCredential</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firebase.user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2216</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in with the given credentials.</p>
+								</div>
+								<p>This method is deprecated. Use
+								<a href="firebase.auth.auth.html#signinandretrievedatawithcredential">firebase.auth.Auth.signInAndRetrieveDataWithCredential</a> instead.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/account-exists-with-different-credential</dt>
+									<dd>Thrown if there already exists an account with the email address
+										asserted by the credential. Resolve this by calling
+										<a href="firebase.auth.auth.html#fetchprovidersforemail">firebase.auth.Auth.fetchProvidersForEmail</a> and then asking the
+										user to sign in using one of the returned providers. Once the user is
+										signed in, the original credential can be linked to the user with
+									<a href="../interfaces/firebase.user.html#linkwithcredential">firebase.User.linkWithCredential</a>.</dd>
+									<dt>auth/invalid-credential</dt>
+									<dd>Thrown if the credential is malformed or has expired.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if the type of account corresponding to the credential
+										is not enabled. Enable the account type in the Firebase Console, under
+									the Auth tab.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given credential has been
+									disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if signing in with a credential from
+										<a href="../classes/firebase.auth.emailauthprovider.html#credential">firebase.auth.EmailAuthProvider.credential</a> and there is no user
+									corresponding to the given email. </dd>
+									<dt>auth/wrong-password</dt>
+									<dd>Thrown if signing in with a credential from
+										<a href="../classes/firebase.auth.emailauthprovider.html#credential">firebase.auth.EmailAuthProvider.credential</a> and the password is
+										invalid for the given email, or if the account corresponding to the email
+									does not have a password set.</dd>
+									<dt>auth/invalid-verification-code</dt>
+									<dd>Thrown if the credential is a
+										<a href="../classes/firebase.auth.phoneauthprovider.html#credential">firebase.auth.PhoneAuthProvider.credential</a> and the verification
+									code of the credential is not valid.</dd>
+									<dt>auth/invalid-verification-id</dt>
+									<dd>Thrown if the credential is a
+										<a href="../classes/firebase.auth.phoneauthprovider.html#credential">firebase.auth.PhoneAuthProvider.credential</a>  and the verification
+									ID of the credential is not valid.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInWithCredential(credential).catch(function(<span class="hljs-keyword">error</span>) {
+  <span class="hljs-comment">// Handle Errors here.</span>
+  <span class="hljs-keyword">var</span> errorCode = <span class="hljs-keyword">error</span>.code;
+  <span class="hljs-keyword">var</span> errorMessage = <span class="hljs-keyword">error</span>.message;
+  <span class="hljs-comment">// The email of the user's account used.</span>
+  <span class="hljs-keyword">var</span> email = <span class="hljs-keyword">error</span>.email;
+  <span class="hljs-comment">// The firebase.auth.AuthCredential type that was used.</span>
+  <span class="hljs-keyword">var</span> credential = <span class="hljs-keyword">error</span>.credential;
+  <span class="hljs-keyword">if</span> (errorCode === 'auth/account-exists-with-different-credential') {
+    alert('Email already associated with another account.');
+    <span class="hljs-comment">// Handle account linking here, if using.</span>
+  } <span class="hljs-keyword">else</span> {
+    console.<span class="hljs-keyword">error</span>(<span class="hljs-keyword">error</span>);
+  }
+ });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>credential: <a href="../interfaces/firebase.auth.authcredential.html" class="tsd-signature-type">AuthCredential</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The auth credential.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firebase.user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithcustomtoken" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Custom<wbr>Token</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Custom<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2252</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in using a custom token.</p>
+								</div>
+								<p>Custom tokens are used to integrate Firebase Auth with existing auth systems,
+								and must be generated by the auth backend.</p>
+								<p>Fails with an error if the token is invalid, expired, or not accepted by the
+								Firebase Auth service.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/custom-token-mismatch</dt>
+									<dd>Thrown if the custom token is for a different Firebase App.</dd>
+									<dt>auth/invalid-custom-token</dt>
+									<dd>Thrown if the custom token format is incorrect.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInWithCustomToken(<span class="hljs-built_in">token</span>).catch(function(<span class="hljs-built_in">error</span>) {
+  <span class="hljs-comment">// Handle Errors here.</span>
+  var errorCode = <span class="hljs-built_in">error</span>.<span class="hljs-built_in">code</span>;
+  var errorMessage = <span class="hljs-built_in">error</span>.message;
+  <span class="hljs-keyword">if</span> (errorCode === 'auth/invalid-custom-<span class="hljs-built_in">token</span>') {
+    alert('The <span class="hljs-built_in">token</span> you provided is <span class="hljs-keyword">not</span> valid.');
+  } <span class="hljs-keyword">else</span> {
+    console.<span class="hljs-built_in">error</span>(<span class="hljs-built_in">error</span>);
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>token: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The custom token to sign in with.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithemailandpassword" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Email<wbr>And<wbr>Password</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Email<wbr>And<wbr>Password<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2338</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in using an email and password.</p>
+								</div>
+								<p>Fails with an error if the email address and password do not match.</p>
+								<p>Note: The user&#39;s password is NOT the password used to access the user&#39;s email
+									account. The email address serves as a unique identifier for the user, and
+								the password is used to access the user&#39;s account in your Firebase project.</p>
+								<p>See also: <a href="firebase.auth.auth.html#createuserwithemailandpassword">firebase.auth.Auth.createUserWithEmailAndPassword</a>.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given email has been
+									disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the given email.</dd>
+									<dt>auth/wrong-password</dt>
+									<dd>Thrown if the password is invalid for the given email, or the account
+									corresponding to the email does not have a password set.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>firebase.auth().signInWithEmailAndPassword(email, password)
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-comment">// Handle Errors here.</span>
+  <span class="hljs-keyword">var</span> errorCode = error.code;
+  <span class="hljs-keyword">var</span> errorMessage = error.message;
+  <span class="hljs-keyword">if</span> (errorCode === <span class="hljs-string">'auth/wrong-password'</span>) {
+    alert(<span class="hljs-string">'Wrong password.'</span>);
+  } <span class="hljs-keyword">else</span> {
+    alert(errorMessage);
+  }
+  <span class="hljs-built_in">console</span>.log(error);
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The users email address.</p>
+									</div>
+								</li>
+								<li>
+									<h5>password: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The users password.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithemaillink" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Email<wbr>Link</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Email<wbr>Link<span class="tsd-signature-symbol">(</span>email<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, emailLink<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2486</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in using an email and sign-in email link. If no link
+									is passed, the link is inferred from the current URL.</p>
+								</div>
+								<p>Fails with an error if the email address is invalid or OTP in email link
+								expires.</p>
+								<p>Note: Confirm the link is a sign-in email link before calling this method
+								<a href="firebase.auth.auth.html#issigninwithemaillink">firebase.auth.Auth.isSignInWithEmailLink</a>.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/expired-action-code</dt>
+									<dd>Thrown if OTP in email link expires.</dd>
+									<dt>auth/invalid-email</dt>
+									<dd>Thrown if the email address is not valid.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given email has been
+									disabled.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-selector-tag">firebase</span><span class="hljs-selector-class">.auth</span>()<span class="hljs-selector-class">.signInWithEmailLink</span>(email, emailLink)
+    <span class="hljs-selector-class">.catch</span>(function(error) {
+      <span class="hljs-comment">// Some error occurred, you can inspect the code: error.code</span>
+      <span class="hljs-comment">// Common errors could be invalid email and invalid or expired OTPs.</span>
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>email: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The email account to sign in with.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> emailLink: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The optional link which contains the OTP needed
+											to complete the sign in with email link. If not specified, the current
+										URL is used instead.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithphonenumber" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Phone<wbr>Number</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Phone<wbr>Number<span class="tsd-signature-symbol">(</span>phoneNumber<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, applicationVerifier<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.applicationverifier.html" class="tsd-signature-type">ApplicationVerifier</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firebase.auth.confirmationresult.html" class="tsd-signature-type">ConfirmationResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2447</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously signs in using a phone number. This method sends a code via
+										SMS to the given phone number, and returns a
+										<a href="../interfaces/firebase.auth.confirmationresult.html">firebase.auth.ConfirmationResult</a>. After the user provides the code
+										sent to their phone, call <a href="../interfaces/firebase.auth.confirmationresult.html#confirm">firebase.auth.ConfirmationResult.confirm</a>
+									with the code to sign the user in.</p>
+								</div>
+								<p>For abuse prevention, this method also requires a
+									<a href="../interfaces/firebase.auth.applicationverifier.html">firebase.auth.ApplicationVerifier</a>. The Firebase Auth SDK includes
+								a reCAPTCHA-based implementation, <a href="../classes/firebase.auth.recaptchaverifier.html">firebase.auth.RecaptchaVerifier</a>.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/captcha-check-failed</dt>
+									<dd>Thrown if the reCAPTCHA response token was invalid, expired, or if
+									this method was called from a non-whitelisted domain.</dd>
+									<dt>auth/invalid-phone-number</dt>
+									<dd>Thrown if the phone number has an invalid format.</dd>
+									<dt>auth/missing-phone-number</dt>
+									<dd>Thrown if the phone number is missing.</dd>
+									<dt>auth/quota-exceeded</dt>
+									<dd>Thrown if the SMS quota for the Firebase project has been exceeded.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given phone number has been
+									disabled.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if you have not enabled the provider in the Firebase Console. Go
+										to the Firebase Console for your project, in the Auth section and the
+									<strong>Sign in Method</strong> tab and configure the provider.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-comment">// 'recaptcha-container' is the ID of an element in the DOM.</span>
+<span class="hljs-keyword">var</span> applicationVerifier = <span class="hljs-keyword">new</span> firebase.auth.RecaptchaVerifier(
+    <span class="hljs-string">'recaptcha-container'</span>);
+firebase.auth().signInWithPhoneNumber(phoneNumber, applicationVerifier)
+    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">confirmationResult</span>) </span>{
+      <span class="hljs-keyword">var</span> verificationCode = <span class="hljs-built_in">window</span>.prompt(<span class="hljs-string">'Please enter the verification '</span> +
+          <span class="hljs-string">'code that was sent to your mobile device.'</span>);
+      <span class="hljs-keyword">return</span> confirmationResult.confirm(verificationCode);
+    })
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>) </span>{
+      <span class="hljs-comment">// Handle Errors here.</span>
+    });</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>phoneNumber: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The user&#39;s phone number in E.164 format (e.g.
+										+16505550101).</p>
+									</div>
+								</li>
+								<li>
+									<h5>applicationVerifier: <a href="../interfaces/firebase.auth.applicationverifier.html" class="tsd-signature-type">ApplicationVerifier</a></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/firebase.auth.confirmationresult.html" class="tsd-signature-type">ConfirmationResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithpopup" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Popup</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Popup<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.authprovider.html" class="tsd-signature-type">AuthProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2579</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Authenticates a Firebase client using a popup-based OAuth authentication
+									flow.</p>
+								</div>
+								<p>If succeeds, returns the signed in user along with the provider&#39;s credential.
+									If sign in was unsuccessful, returns an error object containing additional
+								information about the error.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/account-exists-with-different-credential</dt>
+									<dd>Thrown if there already exists an account with the email address
+										asserted by the credential. Resolve this by calling
+										<a href="firebase.auth.auth.html#fetchprovidersforemail">firebase.auth.Auth.fetchProvidersForEmail</a> with the error.email
+										and then asking the user to sign in using one of the returned providers.
+										Once the user is signed in, the original credential retrieved from the
+										error.credential can be linked to the user with
+										<a href="../interfaces/firebase.user.html#linkwithcredential">firebase.User.linkWithCredential</a> to prevent the user from signing
+										in again to the original provider via popup or redirect. If you are using
+										redirects for sign in, save the credential in session storage and then
+										retrieve on redirect and repopulate the credential using for example
+										<a href="../classes/firebase.auth.googleauthprovider.html#credential">firebase.auth.GoogleAuthProvider.credential</a> depending on the
+									credential provider id and complete the link.</dd>
+									<dt>auth/auth-domain-config-required</dt>
+									<dd>Thrown if authDomain configuration is not provided when calling
+										firebase.initializeApp(). Check Firebase Console for instructions on
+									determining and passing that field.</dd>
+									<dt>auth/cancelled-popup-request</dt>
+									<dd>Thrown if successive popup operations are triggered. Only one popup
+										request is allowed at one time. All the popups would fail with this error
+									except for the last one.</dd>
+									<dt>auth/operation-not-allowed</dt>
+									<dd>Thrown if the type of account corresponding to the credential
+										is not enabled. Enable the account type in the Firebase Console, under
+									the Auth tab.</dd>
+									<dt>auth/operation-not-supported-in-this-environment</dt>
+									<dd>Thrown if this operation is not supported in the environment your
+										application is running on. "location.protocol" must be http or https.
+									</dd>
+									<dt>auth/popup-blocked</dt>
+									<dd>Thrown if the popup was blocked by the browser, typically when this
+									operation is triggered outside of a click handler.</dd>
+									<dt>auth/popup-closed-by-user</dt>
+									<dd>Thrown if the popup window is closed by the user without completing the
+									sign in to the provider.</dd>
+									<dt>auth/unauthorized-domain</dt>
+									<dd>Thrown if the app domain is not authorized for OAuth operations for your
+										Firebase project. Edit the list of authorized domains from the Firebase
+									console.</dd>
+								</dl>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Creates the provider object.</span>
+<span class="hljs-keyword">var</span> provider = <span class="hljs-keyword">new</span> firebase.auth.FacebookAuthProvider();
+<span class="hljs-comment">// You can add additional scopes to the provider:</span>
+provider.addScope(<span class="hljs-string">'email'</span>);
+provider.addScope(<span class="hljs-string">'user_friends'</span>);
+<span class="hljs-comment">// Sign in with popup:</span>
+auth.signInWithPopup(provider).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(result)</span> </span>{
+  <span class="hljs-comment">// The firebase.User instance:</span>
+  <span class="hljs-keyword">var</span> user = result.user;
+  <span class="hljs-comment">// The Facebook firebase.auth.AuthCredential containing the Facebook</span>
+  <span class="hljs-comment">// access token:</span>
+  <span class="hljs-keyword">var</span> credential = result.credential;
+}, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(error)</span> </span>{
+  <span class="hljs-comment">// The provider's account email, can be used in case of</span>
+  <span class="hljs-comment">// auth/account-exists-with-different-credential to fetch the providers</span>
+  <span class="hljs-comment">// linked to the email:</span>
+  <span class="hljs-keyword">var</span> email = error.email;
+  <span class="hljs-comment">// The provider's credential:</span>
+  <span class="hljs-keyword">var</span> credential = error.credential;
+  <span class="hljs-comment">// In case of auth/account-exists-with-different-credential error,</span>
+  <span class="hljs-comment">// you can fetch the providers using this:</span>
+  <span class="hljs-keyword">if</span> (error.code === <span class="hljs-string">'auth/account-exists-with-different-credential'</span>) {
+    auth.fetchProvidersForEmail(email).then(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(providers)</span> </span>{
+      <span class="hljs-comment">// The returned 'providers' is a list of the available providers</span>
+      <span class="hljs-comment">// linked to the email address. Please refer to the guide for a more</span>
+      <span class="hljs-comment">// complete explanation on how to recover from this error.</span>
+    });
+  }
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>provider: <a href="../interfaces/firebase.auth.authprovider.html" class="tsd-signature-type">AuthProvider</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The provider to authenticate.
+										The provider has to be an OAuth provider. Non-OAuth providers like <a href="../classes/firebase.auth.emailauthprovider.html">firebase.auth.EmailAuthProvider</a> will throw an error.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="firebase.auth.html#usercredential" class="tsd-signature-type">UserCredential</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signinwithredirect" class="tsd-anchor"></a>
+					<h3>sign<wbr>InWith<wbr>Redirect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>InWith<wbr>Redirect<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.auth.authprovider.html" class="tsd-signature-type">AuthProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2608</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Authenticates a Firebase client using a full-page redirect flow. To handle
+									the results and errors for this operation, refer to <a href="firebase.auth.auth.html#getredirectresult">firebase.auth.Auth.getRedirectResult</a>.</p>
+								</div>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/auth-domain-config-required</dt>
+									<dd>Thrown if authDomain configuration is not provided when calling
+										firebase.initializeApp(). Check Firebase Console for instructions on
+									determining and passing that field.</dd>
+									<dt>auth/operation-not-supported-in-this-environment</dt>
+									<dd>Thrown if this operation is not supported in the environment your
+										application is running on. "location.protocol" must be http or https.
+									</dd>
+									<dt>auth/unauthorized-domain</dt>
+									<dd>Thrown if the app domain is not authorized for OAuth operations for your
+										Firebase project. Edit the list of authorized domains from the Firebase
+									console.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>provider: <a href="../interfaces/firebase.auth.authprovider.html" class="tsd-signature-type">AuthProvider</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The provider to authenticate.
+										The provider has to be an OAuth provider. Non-OAuth providers like <a href="../classes/firebase.auth.emailauthprovider.html">firebase.auth.EmailAuthProvider</a> will throw an error.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="signout" class="tsd-anchor"></a>
+					<h3>sign<wbr>Out</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>Out<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2612</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Signs out the current user.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="updatecurrentuser" class="tsd-anchor"></a>
+					<h3>update<wbr>Current<wbr>User</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Current<wbr>User<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2636</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Asynchronously sets the provided user as <code>currentUser</code> on the current Auth
+										instance. A new instance copy of the user provided will be made and set as
+									<code>currentUser</code>.</p>
+								</div>
+								<p>This will trigger <a href="firebase.auth.auth.html#onauthstatechanged">firebase.auth.Auth.onAuthStateChanged</a> and
+									<a href="firebase.auth.auth.html#onidtokenchanged">firebase.auth.Auth.onIdTokenChanged</a> listeners like other sign in
+								methods.</p>
+								<p>The operation fails with an error if the user to be updated belongs to a
+								different Firebase project.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/invalid-user-token</dt>
+									<dd>Thrown if the user to be updated belongs to a diffent Firebase
+									project.</dd>
+									<dt>auth/user-token-expired</dt>
+									<dd>Thrown if the token of the user to be updated is expired.</dd>
+									<dt>auth/null-user</dt>
+									<dd>Thrown if the user to be updated is null.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <a href="../interfaces/firebase.user.html" class="tsd-signature-type">User</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="usedevicelanguage" class="tsd-anchor"></a>
+					<h3>use<wbr>Device<wbr>Language</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">use<wbr>Device<wbr>Language<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2640</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the current language to the default device/browser preference.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
+					<a name="verifypasswordresetcode" class="tsd-anchor"></a>
+					<h3>verify<wbr>Password<wbr>Reset<wbr>Code</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">verify<wbr>Password<wbr>Reset<wbr>Code<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:2666</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks a password reset code sent to the user by email or other out-of-band
+									mechanism.</p>
+								</div>
+								<p>Returns the user&#39;s email address if valid.</p>
+								<h4>Error Codes</h4>
+								<dl>
+									<dt>auth/expired-action-code</dt>
+									<dd>Thrown if the password reset code has expired.</dd>
+									<dt>auth/invalid-action-code</dt>
+									<dd>Thrown if the password reset code is invalid. This can happen if the code
+									is malformed or has already been used.</dd>
+									<dt>auth/user-disabled</dt>
+									<dd>Thrown if the user corresponding to the given password reset code has
+									been disabled.</dd>
+									<dt>auth/user-not-found</dt>
+									<dd>Thrown if there is no user corresponding to the password reset code. This
+										may have happened if the user was deleted between when the code was
+									issued and when this method was called.</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>code: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A verification code sent to the user.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+</body>
+</html>

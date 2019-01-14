@@ -1,0 +1,311 @@
+<!doctype html>
+<html class="default firebase-docs no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>storage | JavaScript SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/firebase.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell">
+					<a href="../index.html" class="title">
+						<span class="project-name">JavaScript SDK</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="firebase.html">firebase</a>
+				</li>
+				<li>
+					<a href="firebase.storage.html">storage</a>
+				</li>
+			</ul>
+			<h1>storage</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="current tsd-kind-module">
+						<a href="firebase.html">firebase</a>
+						<ul>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.app.html">app</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.auth.html">auth</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.database.html">database</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.firestore.html">firestore</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.functions.html">functions</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.messaging.html">messaging</a>
+							</li>
+							<li class="current tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.storage.html">storage</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.fullmetadata.html" class="tsd-kind-icon">Full<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.reference.html" class="tsd-kind-icon">Reference</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.settablemetadata.html" class="tsd-kind-icon">Settable<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.storage.html" class="tsd-kind-icon">Storage</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.uploadmetadata.html" class="tsd-kind-icon">Upload<wbr>Metadata</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.uploadtask.html" class="tsd-kind-icon">Upload<wbr>Task</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.storage.uploadtasksnapshot.html" class="tsd-kind-icon">Upload<wbr>Task<wbr>Snapshot</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="firebase.storage.html#stringformat" class="tsd-kind-icon">String<wbr>Format</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="firebase.storage.html#taskevent" class="tsd-kind-icon">Task<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="firebase.storage.html#taskstate" class="tsd-kind-icon">Task<wbr>State</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-8 col-content">
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-module tsd-parent-kind-module">
+					<li class="tsd-signature tsd-kind-icon">storage<span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">?: </span><a href="../interfaces/firebase.app.app.html" class="tsd-signature-type">App</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.storage.storage.html" class="tsd-signature-type">Storage</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in index.d.ts:1060</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Gets the <a href="../interfaces/firebase.storage.storage.html"><code>Storage</code></a> service for the default
+								app or a given app.</p>
+							</div>
+							<p><code>firebase.storage()</code> can be called with no arguments to access the default
+								app&#39;s <a href="../interfaces/firebase.storage.storage.html"><code>Storage</code></a> service or as
+								<code>firebase.storage(app)</code> to access the
+								<a href="../interfaces/firebase.storage.storage.html"><code>Storage</code></a> service associated with a
+							specific app.</p>
+							<dl class="tsd-comment-tags">
+								<dt class="tag-example">example</dt>
+								<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Get the Storage service for the default app</span>
+<span class="hljs-keyword">var</span> defaultStorage = firebase.storage();</code></pre></dd>
+								<dt class="tag-example">example</dt>
+								<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Get the Storage service for a given app</span>
+<span class="hljs-keyword">var</span> otherStorage = firebase.storage(otherApp);</code></pre></dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> app: <a href="../interfaces/firebase.app.app.html" class="tsd-signature-type">App</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The app to create a storage service for.
+									If not passed, uses the default app.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/firebase.storage.storage.html" class="tsd-signature-type">Storage</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.fullmetadata.html" class="tsd-kind-icon">Full<wbr>Metadata</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.reference.html" class="tsd-kind-icon">Reference</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.settablemetadata.html" class="tsd-kind-icon">Settable<wbr>Metadata</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.storage.html" class="tsd-kind-icon">Storage</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.uploadmetadata.html" class="tsd-kind-icon">Upload<wbr>Metadata</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.uploadtask.html" class="tsd-kind-icon">Upload<wbr>Task</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.storage.uploadtasksnapshot.html" class="tsd-kind-icon">Upload<wbr>Task<wbr>Snapshot</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="firebase.storage.html#stringformat" class="tsd-kind-icon">String<wbr>Format</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="firebase.storage.html#taskevent" class="tsd-kind-icon">Task<wbr>Event</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="firebase.storage.html#taskstate" class="tsd-kind-icon">Task<wbr>State</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="stringformat" class="tsd-anchor"></a>
+					<h3>String<wbr>Format</h3>
+					<div class="tsd-signature tsd-kind-icon">String<wbr>Format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:5539</li>
+							<li>Defined in index.d.ts:5540</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt class="tag-enum">enum</dt>
+							<dd class="tag-body-enum"><p>{string}
+								An enumeration of the possible string formats for upload.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="taskevent" class="tsd-anchor"></a>
+					<h3>Task<wbr>Event</h3>
+					<div class="tsd-signature tsd-kind-icon">Task<wbr>Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:5580</li>
+							<li>Defined in index.d.ts:5581</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An event that is triggered on a task.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt class="tag-enum">enum</dt>
+							<dd class="tag-body-enum"><p>{string}</p>
+							</dd>
+							<dt class="tag-see">see</dt>
+							<dd class="tag-body-see"><p>{@link firebase.storage.UploadTask.prototype.on}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="taskstate" class="tsd-anchor"></a>
+					<h3>Task<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">Task<wbr>State<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:5602</li>
+							<li>Defined in index.d.ts:5603</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represents the current state of a running upload.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt class="tag-enum">enum</dt>
+							<dd class="tag-body-enum"><p>{string}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+</body>
+</html>

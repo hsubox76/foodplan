@@ -1,0 +1,330 @@
+<!doctype html>
+<html class="default firebase-docs no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>database | JavaScript SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/firebase.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell">
+					<a href="../index.html" class="title">
+						<span class="project-name">JavaScript SDK</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="firebase.html">firebase</a>
+				</li>
+				<li>
+					<a href="firebase.database.html">database</a>
+				</li>
+			</ul>
+			<h1>database</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="current tsd-kind-module">
+						<a href="firebase.html">firebase</a>
+						<ul>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.app.html">app</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.auth.html">auth</a>
+							</li>
+							<li class="current tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.database.html">database</a>
+								<ul>
+									<li class=" tsd-kind-module tsd-parent-kind-module">
+										<a href="firebase.database.servervalue.html">Server<wbr>Value</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.firestore.html">firestore</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.functions.html">functions</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.messaging.html">messaging</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="firebase.storage.html">storage</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.database.datasnapshot.html" class="tsd-kind-icon">Data<wbr>Snapshot</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.database.database.html" class="tsd-kind-icon">Database</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.database.ondisconnect.html" class="tsd-kind-icon">On<wbr>Disconnect</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.database.query.html" class="tsd-kind-icon">Query</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.database.reference.html" class="tsd-kind-icon">Reference</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/firebase.database.thenablereference.html" class="tsd-kind-icon">Thenable<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="firebase.database.html#eventtype" class="tsd-kind-icon">Event<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="firebase.database.html#enablelogging" class="tsd-kind-icon">enable<wbr>Logging</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-8 col-content">
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-module tsd-parent-kind-module">
+					<li class="tsd-signature tsd-kind-icon">database<span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">?: </span><a href="../interfaces/firebase.app.app.html" class="tsd-signature-type">App</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/firebase.database.database.html" class="tsd-signature-type">Database</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in index.d.ts:953</li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Gets the <a href="../interfaces/firebase.database.database.html"><code>Database</code></a> service for the
+								default app or a given app.</p>
+							</div>
+							<p><code>firebase.database()</code> can be called with no arguments to access the default
+								app&#39;s <a href="../interfaces/firebase.database.database.html"><code>Database</code></a> service or as
+								<code>firebase.database(app)</code> to access the
+								<a href="../interfaces/firebase.database.database.html"><code>Database</code></a> service associated with a
+							specific app.</p>
+							<p><code>firebase.database</code> is also a namespace that can be used to access global
+							constants and methods associated with the <code>Database</code> service.</p>
+							<dl class="tsd-comment-tags">
+								<dt class="tag-example">example</dt>
+								<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Get the Database service for the default app</span>
+<span class="hljs-keyword">var</span> defaultDatabase = firebase.database();</code></pre></dd>
+								<dt class="tag-example">example</dt>
+								<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Get the Database service for a specific app</span>
+<span class="hljs-keyword">var</span> otherDatabase = firebase.database(<span class="hljs-keyword">app</span>);</code></pre></dd>
+								<dt class="tag-namespace">namespace</dt>
+								<dd class="tag-body-namespace"></dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> app: <a href="../interfaces/firebase.app.app.html" class="tsd-signature-type">App</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Optional app whose Database service to
+									return. If not provided, the default Database service will be returned.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/firebase.database.database.html" class="tsd-signature-type">Database</a></h4>
+						<p>The default Database service if no app
+						is provided or the Database service associated with the provided app.</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Modules</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-module tsd-parent-kind-module"><a href="firebase.database.servervalue.html" class="tsd-kind-icon">Server<wbr>Value</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.database.datasnapshot.html" class="tsd-kind-icon">Data<wbr>Snapshot</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.database.database.html" class="tsd-kind-icon">Database</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.database.ondisconnect.html" class="tsd-kind-icon">On<wbr>Disconnect</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.database.query.html" class="tsd-kind-icon">Query</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.database.reference.html" class="tsd-kind-icon">Reference</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/firebase.database.thenablereference.html" class="tsd-kind-icon">Thenable<wbr>Reference</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="firebase.database.html#eventtype" class="tsd-kind-icon">Event<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="firebase.database.html#enablelogging" class="tsd-kind-icon">enable<wbr>Logging</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="eventtype" class="tsd-anchor"></a>
+					<h3>Event<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">Event<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"value"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"child_added"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"child_changed"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"child_moved"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"child_removed"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in index.d.ts:4134</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="enablelogging" class="tsd-anchor"></a>
+					<h3>enable<wbr>Logging</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Logging<span class="tsd-signature-symbol">(</span>logger<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span>, persistent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in index.d.ts:5166</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Logs debugging information to the console.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Enable logging</span>
+firebase.database.enableLogging(<span class="hljs-literal">true</span>);</code></pre></dd>
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Disable logging</span>
+firebase.database.enableLogging(<span class="hljs-literal">false</span>);</code></pre></dd>
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code><span class="hljs-comment">// Enable logging across page refreshes</span>
+firebase.database.enableLogging(<span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>);</code></pre></dd>
+									<dt class="tag-example">example</dt>
+									<dd class="tag-body-example"><pre><code>// Provide custom logger which prefixes <span class="hljs-built_in">log</span> statements with <span class="hljs-string">"[FIREBASE]"</span>
+firebase.database.enableLogging(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(message)</span></span> {
+  console.<span class="hljs-built_in">log</span>(<span class="hljs-string">"[FIREBASE]"</span>, message);
+});</code></pre></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> logger: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Enables logging if <code>true</code>;
+											disables logging if <code>false</code>. You can also provide a custom logger function
+										to control how things get logged.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> persistent: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Remembers the logging state between page
+										refreshes if <code>true</code>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+</body>
+</html>

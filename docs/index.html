@@ -1,3 +1,235 @@
-<html>
-    TEST
+<!doctype html>
+<html class="default firebase-docs no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>JavaScript SDK</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/firebase.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell">
+					<a href="index.html" class="title">
+						<span class="project-name">JavaScript SDK</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+			</ul>
+			<h1>JavaScript SDK</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="tsd-kind-module">
+						<a href="modules/firebase.html">firebase</a>
+						<ul>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.app.html">app</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.auth.html">auth</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.database.html">database</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.firestore.html">firestore</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.functions.html">functions</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.messaging.html">messaging</a>
+							</li>
+							<li class=" tsd-kind-module tsd-parent-kind-module">
+								<a href="modules/firebase.storage.html">storage</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="firebase-javascript-sdk">Firebase Javascript SDK</h1>
+				<!-- BADGES -->
+				<p><a href="https://travis-ci.org/firebase/firebase-js-sdk"><img src="https://travis-ci.org/firebase/firebase-js-sdk.svg?branch=master" alt="Build Status"></a>
+				<a href="https://saucelabs.com/u/firebase-oss"><img src="https://saucelabs.com/buildstatus/firebase-oss" alt="Build Status"></a></p>
+				<!-- END BADGES -->
+				<p>The Firebase JavaScript SDK implements the client-side libraries used by
+				applications using Firebase services. This SDK is distributed via:</p>
+				<ul>
+					<li>CDN (<code>&lt;script src=&quot;https://www.gstatic.com/firebasejs/5.5.3/firebase.js&quot;&gt;&lt;/script&gt;</code>)</li>
+					<li><a href="https://www.npmjs.com/package/firebase">npm package</a></li>
+					<li><a href="https://github.com/firebase/firebase-bower">Bower package</a></li>
+				</ul>
+				<p>To get started using Firebase, see
+				<a href="https://firebase.google.com/docs/web/setup">Add Firebase to your JavaScript Project</a>.</p>
+				<p>Current <a href="https://firebase.google.com/support/release-notes/js">Release Notes</a></p>
+				<h2 id="sdk-dev-workflow">SDK Dev Workflow</h2>
+				<h3 id="prerequisites">Prerequisites</h3>
+				<h4 id="node-js">Node.js</h4>
+				<p>Before you can start working on the Firebase JS SDK, you need to have Node.js
+					installed on your machine. The currently supported versions are <code>8.0.0</code> or greater,
+				but smaller than <code>10.0.0</code>.</p>
+				<p>To download Node.js visit <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.</p>
+				<p><em>NOTE: You can use a tool like <a href="https://github.com/creationix/nvm"><code>NVM</code></a>
+				or <a href="https://github.com/tj/n"><code>N</code></a> to install and manage multiple node versions</em></p>
+				<h4 id="yarn">Yarn</h4>
+				<p>In addition to Node.js we use <code>yarn</code> to facilitate multi package development.</p>
+				<p>To install <code>yarn</code> follow the instructions listed on their website:
+				<a href="https://yarnpkg.com/en/docs/install">https://yarnpkg.com/en/docs/install</a></p>
+				<h4 id="java">Java</h4>
+				<p>The closure compiler requires a modern Java installation. Java 8+ should be installed: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+				<h4 id="verify-prerequisites">Verify Prerequisites</h4>
+				<p>You can verify your setup by running the following commands in your terminal:</p>
+				<pre><code class="language-bash">$ node -v
+$ yarn -v
+$ java -version</code></pre>
+				<p>Your Node.js version should be <code>8.0.0</code> or greater, your <code>yarn</code> version should
+				be <code>1.0.0</code> or greater, and your <code>java</code> version should be <code>1.8.0</code> or greater.</p>
+				<p><em>NOTE: We will update the documentation as new versions are required, however
+						for continuing development on the SDK, staying up to date on the stable versions
+				of these packages is advised</em></p>
+				<h3 id="install-dependencies">Install Dependencies</h3>
+				<p>Once you have Node.js and <code>yarn</code> installed on your machine and have validated
+					that you are running the proper version, you can set up the development environment
+				by running the following at the root of the SDK:</p>
+				<pre><code class="language-bash">$ yarn</code></pre>
+				<h2 id="testing-the-sdk">Testing the SDK</h2>
+				<h3 id="test-setup">Test Setup</h3>
+				<p>A production project is required to test the Firebase JS SDK. You can create a
+				new project by visiting the <a href="https://console.firebase.google.com/">Firebase Console</a>.</p>
+				<h4 id="firestore-support">Firestore Support</h4>
+				<p>Visit the database section of the console and enable the Cloud Firestore Beta.
+					You can select either of the default permissions settings as we will overwrite
+				them below.</p>
+				<h4 id="authentication-support">Authentication Support</h4>
+				<p>Visit the authentication config in your project and enable the <code>Anonymous</code>
+				sign-in provider to complete your project config.</p>
+				<h4 id="automated-setup">Automated Setup</h4>
+				<p>The remainder of the test setup can be done by running the following command at
+				the root of the package:</p>
+				<pre><code class="language-bash">yarn <span class="hljs-built_in">test</span>:setup</code></pre>
+				<h3 id="running-the-tests">Running the tests</h3>
+				<p>Each of the directories in the <code>integration</code> directory as well as the <code>packages</code>
+					directory have their own test suites. These can be run altogether by running the
+				following command at the root of the package:</p>
+				<pre><code class="language-bash">$ yarn <span class="hljs-built_in">test</span></code></pre>
+				<p>In addition, you can run any of the tests individually by running <code>yarn test</code> in
+				an individual package directory.</p>
+				<h2 id="building-the-sdk">Building the SDK</h2>
+				<h3 id="introduction">Introduction</h3>
+				<p>The Firebase JS SDK is built with a series of individual packages that are all
+					contained in this repository. Development is coordinated via <a href="https://yarnpkg.com/blog/2017/08/02/introducing-workspaces/">yarn
+					workspaces</a> and
+				<a href="https://lernajs.io/">Lerna</a> (a monorepo management tool).</p>
+				<p>Each package in the <code>packages</code> directory, constitute a piece of our
+					implementation. The SDK is built via a combination of all of these packages
+					which are published under the <a href="https://www.npmjs.com/search?q=scope%3Afirebase"><code>firebase</code>
+				scope</a> on NPM.</p>
+				<h3 id="helper-scripts">Helper Scripts</h3>
+				<p>Each package in the <code>packages</code> directory exposes a <code>dev</code> script. This script
+					will set up a watcher for development on the individual piece of the SDK. In
+					addition, there is a top level <code>dev</code> script that can be run to start all of the
+				watch tasks as well as a sandbox server.</p>
+				<p>You can run the dev script by running the following at the root of the package:</p>
+				<pre><code class="language-bash">yarn dev</code></pre>
+				<h3 id="prepush-hooks">Prepush Hooks</h3>
+				<p>As part of this repo, we use the NPM package <a href="https://npm.im/husky"><code>husky</code></a> to
+				implement git hooks. We leverage the prepush hook to do two things:</p>
+				<ul>
+					<li>Automated code styling (using <a href="https://npm.im/prettier"><code>prettier</code></a>)</li>
+					<li>Automated LICENSE header insertion</li>
+				</ul>
+				<h2 id="contributing">Contributing</h2>
+				<p>See <a href="./CONTRIBUTING.md">Contributing</a> for more information on contributing to the Firebase
+				JavaScript SDK.</p>
+				<h3 id="big-thanks">Big Thanks</h3>
+				<p>Cross-browser Testing Platform and Open Source &lt;3 Provided by <a href="https://saucelabs.com">Sauce Labs</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+</body>
 </html>
