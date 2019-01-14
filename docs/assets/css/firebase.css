@@ -1,3 +1,13 @@
+.firebase-docs body {
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.firebase-docs body header {
+    font-family: "Google Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
 .firebase-docs .tsd-page-title {
     background-color: #039be5;
     color: white;
@@ -23,7 +33,7 @@
 .firebase-docs .project-name {
     color: #333;
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: normal;
     margin-left: 130px;
 }
